@@ -7,62 +7,83 @@
     android:background="#FFFFFF"
     tools:context=".Playing">
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/customtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary"
+        tools:ignore="MissingConstraints">
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/toolbarOSS"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:src="@drawable/e5" />
+
     <ImageView
         android:id="@+id/button_play"
-        android:layout_width="64dp"
-        android:layout_height="65dp"
-        android:layout_below="@+id/question"
+        android:layout_width="49dp"
+        android:layout_height="51dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="138dp"
         android:background="@drawable/e10"
         android:gravity="center"
-        android:visibility="visible"
-        android:onClick="playMusic"/>
+        android:onClick="playMusic"
+        android:visibility="visible" />
 
     <RelativeLayout
-        android:layout_below="@+id/button_play"
+        android:layout_width="wrap_content"
 
+        android:layout_height="359dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/button_play"
+        android:layout_marginBottom="6dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:layout_marginTop="1dp"
         android:background="@drawable/round_corner"
         android:elevation="4dp"
-        android:paddingTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:paddingTop="20dp">
 
         <LinearLayout
-            android:orientation="vertical"
             android:id="@+id/btnGroup"
-            android:paddingTop="10dp"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
 
             <LinearLayout
-                android:weightSum="2"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <TextView
                     android:id="@+id/txtScore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/button_border"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="36sp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/txtQuestion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="1/30"
-                    android:textSize="36sp"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="36sp" />
 
             </LinearLayout>
 
@@ -87,12 +108,13 @@
                     android:id="@+id/btnAnswerA"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
-                    android:layout_height="37dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:background="#262261"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:text="Answer A"
                     android:textColor="#FFFFFF"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:theme="@style/MyButton" />
 
@@ -100,12 +122,13 @@
                     android:id="@+id/btnAnswerB"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
-                    android:layout_height="33dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:background="#ff8a80"
+                    android:background="#262261"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:text="Answer B"
                     android:textColor="#FFFFFF"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:theme="@style/MyButton" />
 
@@ -113,12 +136,13 @@
                     android:id="@+id/btnAnswerC"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
-                    android:layout_height="36dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:background="#ff8a80"
+                    android:background="#262261"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:text="Answer C"
                     android:textColor="#FFFFFF"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:theme="@style/MyButton" />
 
@@ -126,12 +150,13 @@
                     android:id="@+id/btnAnswerD"
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="match_parent"
-                    android:layout_height="34dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:background="#ff8a80"
+                    android:background="#262261"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:text="Answer D"
                     android:textColor="#FFFFFF"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     android:theme="@style/MyButton" />
 
@@ -143,12 +168,12 @@
 
     <TextView
         android:id="@+id/question"
+        android:layout_below="@+id/customtoolbar"
         android:layout_width="345dp"
         android:layout_height="62dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/button_play"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginBottom="-124dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
