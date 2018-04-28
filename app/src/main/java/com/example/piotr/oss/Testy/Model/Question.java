@@ -1,4 +1,4 @@
-package com.example.piotr.oss.Model;
+package com.example.piotr.oss.Testy.Model;
 
 public class Question {
     private int ID;

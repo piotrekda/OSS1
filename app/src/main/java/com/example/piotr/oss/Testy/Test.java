@@ -1,4 +1,4 @@
-package com.example.piotr.oss;
+package com.example.piotr.oss.Testy;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.piotr.oss.Common.Common;
-import com.example.piotr.oss.DbHelper.DbHelper;
+import com.example.piotr.oss.Testy.Common.Common;
+import com.example.piotr.oss.Testy.DbHelper.DbHelper;
+import com.example.piotr.oss.R;
 
 import java.io.IOException;
 

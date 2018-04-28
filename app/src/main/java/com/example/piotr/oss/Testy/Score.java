@@ -1,12 +1,13 @@
-package com.example.piotr.oss;
+package com.example.piotr.oss.Testy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.piotr.oss.Common.CustomAdapter;
-import com.example.piotr.oss.DbHelper.DbHelper;
-import com.example.piotr.oss.Model.Ranking;
+import com.example.piotr.oss.Testy.Common.CustomAdapter;
+import com.example.piotr.oss.Testy.DbHelper.DbHelper;
+import com.example.piotr.oss.Testy.Model.Ranking;
+import com.example.piotr.oss.R;
 
 import java.util.List;
 

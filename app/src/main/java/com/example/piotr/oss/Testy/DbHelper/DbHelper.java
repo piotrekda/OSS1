@@ -1,4 +1,4 @@
-package com.example.piotr.oss.DbHelper;
+package com.example.piotr.oss.Testy.DbHelper;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.piotr.oss.Common.Common;
-import com.example.piotr.oss.Model.Question;
-import com.example.piotr.oss.Model.Ranking;
+import com.example.piotr.oss.Testy.Common.Common;
+import com.example.piotr.oss.Testy.Model.Question;
+import com.example.piotr.oss.Testy.Model.Ranking;
 
 import java.io.File;
 import java.io.FileOutputStream;

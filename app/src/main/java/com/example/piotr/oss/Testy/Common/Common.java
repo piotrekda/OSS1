@@ -1,4 +1,4 @@
-package com.example.piotr.oss.Common;
+package com.example.piotr.oss.Testy.Common;
 
 public class Common {
     public static final int EASY_MODE_NUM = 5; // NUMBER OF QUESTION IN EASY MODE

@@ -19,16 +19,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Test"
+            android:name=".Testy.Test"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Playing"
+            android:name=".Testy.Playing"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Done"
+            android:name=".Testy.Done"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Score"
+            android:name=".Testy.Score"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Testy.Test1"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Testy.Playing1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Testy.Score1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Testy.Done1"
             android:screenOrientation="portrait"></activity>
     </application>
 

@@ -1,24 +1,26 @@
-package com.example.piotr.oss;
+package com.example.piotr.oss.Testy;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.piotr.oss.DbHelper.DbHelper;
-import com.example.piotr.oss.Model.Question;
+import com.example.piotr.oss.Testy.DbHelper.Db1Helper;
+
+import com.example.piotr.oss.Testy.Model.Question;
+import com.example.piotr.oss.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Playing extends AppCompatActivity implements View.OnClickListener {
+public class Playing1 extends AppCompatActivity implements View.OnClickListener {
 
     final static long INTERVAL = 1000; // 1 second
     final static long TIMEOUT = 30000; // 7 sconds
@@ -26,7 +28,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
     CountDownTimer mCountDown; // for progressbar
     List<Question> questionPlay = new ArrayList<>(); //total Question
-    DbHelper db;
+    Db1Helper db;
     int index = 0, score = 0, thisQuestion = 0, totalQuestion, correctAnswer;
     String mode = "";
 
@@ -43,14 +45,14 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playing);
+        setContentView(R.layout.activity_playing1);
 
         //Get Data from MainActivity
         Bundle extra = getIntent().getExtras();
         if (extra != null)
             mode = extra.getString("MODE");
 
-        db = new DbHelper(this);
+        db = new Db1Helper(this);
 
         questiona = (TextView) findViewById(R.id.question);
         txtScore = (TextView) findViewById(R.id.txtScore);
@@ -127,7 +129,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
             mCountDown.start();
         } else {
-            Intent intent = new Intent(this, Done.class);
+            Intent intent = new Intent(this, Done1.class);
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE", score);
             dataSend.putInt("TOTAL", totalQuestion);

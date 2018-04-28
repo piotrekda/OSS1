@@ -1,4 +1,4 @@
-package com.example.piotr.oss;
+package com.example.piotr.oss.Testy;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +8,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.piotr.oss.DbHelper.DbHelper;
+import com.example.piotr.oss.Testy.DbHelper.Db1Helper;
+import com.example.piotr.oss.R;
 
 
-public class Done extends AppCompatActivity {
+public class Done1 extends AppCompatActivity {
 
     Button btnTryAgain;
     TextView txtResultScore, txtResultQuestion;
@@ -20,9 +21,9 @@ public class Done extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_done);
+        setContentView(R.layout.activity_done1);
 
-        DbHelper db = new DbHelper(this);
+        Db1Helper db = new Db1Helper(this);
 
 
         txtResultScore = (TextView) findViewById(R.id.txtTotalScore);
@@ -32,7 +33,7 @@ public class Done extends AppCompatActivity {
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Test.class);
+                Intent intent = new Intent(getApplicationContext(), Test1.class);
                 startActivity(intent);
                 finish();
             }

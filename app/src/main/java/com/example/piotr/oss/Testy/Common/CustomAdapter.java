@@ -1,4 +1,4 @@
-package com.example.piotr.oss.Common;
+package com.example.piotr.oss.Testy.Common;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.piotr.oss.Model.Ranking;
+import com.example.piotr.oss.Testy.Model.Ranking;
 import com.example.piotr.oss.R;
 
 import java.util.List;
