@@ -67,10 +67,10 @@ public class Done extends AppCompatActivity {
             }
 
 
-            double subtract = ((5.0/(float)score)*100)*(playCount-1); //-1 because we playCount++ before we calculate result
+            double subtract = (playCount-1); //-1 because we playCount++ before we calculate result
             double finalScore = score - subtract;
 
-            txtResultScore.setText(String.format("Wynik : %.1f (-%d)%%", finalScore,5*(playCount-1)));
+            txtResultScore.setText(String.format("Wynik : %.1f (-%d)", finalScore,(playCount-1)));
             txtResultQuestion.setText(String.format("Prawidłowych : %d/%d", correctAnswer, totalQuestion));
 
             progressBarResult.setMax(totalQuestion);

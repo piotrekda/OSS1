@@ -38,10 +38,6 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     TextView questiona;
     MediaPlayer mySound;
 
-    //@Override
-    // protected void onPause(){
-    //     super.onPause();
-    // mySound.release();}
 
 
     @Override
@@ -111,8 +107,6 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
             int soundId = getResourceId(questionPlay.get(index).getSound(), "raw", getPackageName());
 
-            //String SoundId = "R.raw." + questionPlay.get(index).getSound();
-            //int SoundId=this.getResources().getIdentifier(questionPlay.get(index).getSound(),"raw",getPackageName());
 
             if (soundId != 0) {
                 mySound = MediaPlayer.create(this, soundId);
@@ -159,7 +153,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         } else {
             mySound.start();
         }
-//        mySound.stop();
+
     }
 
     @Override

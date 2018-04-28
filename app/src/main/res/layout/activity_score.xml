@@ -5,15 +5,19 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/activity_main"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@color/backgroundPage"
-tools:context=".Score">
 
+    android:background="@android:color/white"
+
+tools:context=".Score">
 
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/customtoolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginEnd="0dp"
         android:background="?attr/colorPrimary"
         tools:ignore="MissingConstraints">
 
@@ -29,14 +33,9 @@ tools:context=".Score">
         android:src="@drawable/e5"
         android:contentDescription="TODO" />
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@android:color/white"
-        android:elevation="4dp"
-        android:padding="20dp">
+
+
+
 
         <TextView
             android:id="@+id/txtTitle"
@@ -50,13 +49,13 @@ tools:context=".Score">
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ListView
-            android:id="@+id/lstRanking"
-            android:layout_width="match_parent"
-            android:layout_height="412dp"
-            android:layout_below="@+id/txtTitle"
-            android:layout_marginTop="8dp"></ListView>
+    <ListView
+        android:id="@+id/lstRanking"
+        android:layout_width="match_parent"
+        android:layout_height="412dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"></ListView>
 
 
-    </RelativeLayout>
 </RelativeLayout>

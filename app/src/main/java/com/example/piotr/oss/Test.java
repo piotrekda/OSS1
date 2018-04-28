@@ -48,11 +48,11 @@ public class Test extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(progress == 0)
-                    txtMode.setText(Common.MODE.EASY.toString());
+                    txtMode.setText("5 pytań".toString());
                 else if(progress == 1)
-                    txtMode.setText(Common.MODE.MEDIUM.toString());
+                    txtMode.setText("15 pytań".toString());
                 else if(progress == 2)
-                    txtMode.setText(Common.MODE.HARD.toString());
+                    txtMode.setText("25 pytań".toString());
             }
 
             @Override
