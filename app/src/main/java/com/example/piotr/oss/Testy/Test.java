@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class Test extends AppCompatActivity {
     TextView txtMode;
     Button btnPlay,btnScore;
     DbHelper db;
+    ImageView Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class Test extends AppCompatActivity {
         txtMode = (TextView)findViewById(R.id.txtMode);
         btnPlay = (Button)findViewById(R.id.btnPlay);
         btnScore = (Button)findViewById(R.id.btnScore);
+        Back = (ImageView)findViewById(R.id.Back);
 
 
         db = new DbHelper(this);
@@ -80,6 +83,15 @@ public class Test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Score.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),StrefaTestu.class);
                 startActivity(intent);
                 finish();
             }

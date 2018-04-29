@@ -33,12 +33,20 @@
         <activity
             android:name=".Testy.Test1"
             android:screenOrientation="portrait" />
-        <activity android:name=".Testy.Playing1"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Testy.Score1"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Testy.Done1"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Testy.Playing1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Testy.Score1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Testy.Done1"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Testy.StrefaTestu" />
+        <activity android:name=".strefaNauki" />
+        <activity android:name=".Nauka.Kardio.Kardio" />
+        <activity android:name=".Nauka.Kardio.JO" />
+        <activity android:name=".Nauka.Kardio.JO1"></activity>
     </application>
 
 </manifest>
