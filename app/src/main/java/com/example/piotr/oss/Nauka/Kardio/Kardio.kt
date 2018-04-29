@@ -31,6 +31,11 @@ class Kardio : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun toPTS (view: View) {
+        val intent = Intent(applicationContext, PTS::class.java)
+        startActivity(intent)
+    }
+
 
 
 

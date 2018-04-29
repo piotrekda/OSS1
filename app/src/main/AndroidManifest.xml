@@ -42,11 +42,23 @@
         <activity
             android:name=".Testy.Done1"
             android:screenOrientation="portrait" />
-        <activity android:name=".Testy.StrefaTestu" />
-        <activity android:name=".strefaNauki" />
-        <activity android:name=".Nauka.Kardio.Kardio" />
-        <activity android:name=".Nauka.Kardio.JO" />
-        <activity android:name=".Nauka.Kardio.JO1"></activity>
+        <activity
+            android:name=".Testy.StrefaTestu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".strefaNauki"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Nauka.Kardio.Kardio"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Nauka.Kardio.JO"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Nauka.Kardio.JO1"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Nauka.Kardio.PTS" />
+        <activity android:name=".Nauka.Kardio.PTS1"></activity>
     </application>
 
 </manifest>

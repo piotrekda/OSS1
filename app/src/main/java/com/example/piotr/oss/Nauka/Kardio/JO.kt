@@ -31,7 +31,7 @@ class JO : AppCompatActivity() {
         startActivity(intent)
     }
     fun toJO1 (view: View) {
-        val intent = Intent(applicationContext, JO::class.java)
+        val intent = Intent(applicationContext, JO1::class.java)
         startActivity(intent)
     }
 }

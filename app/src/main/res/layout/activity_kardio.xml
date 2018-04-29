@@ -123,6 +123,7 @@
         android:layout_marginTop="127dp"
         android:background="@drawable/rounded_button"
         android:text="Prawidłowe tony serca"
+        android:onClick="toPTS"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />

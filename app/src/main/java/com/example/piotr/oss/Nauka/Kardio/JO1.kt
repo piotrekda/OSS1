@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.piotr.oss.R
 
 class JO1 : AppCompatActivity() {
 
