@@ -51,8 +51,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="86dp"
-        android:background="@drawable/lungs"
-        android:gravity="center" />
+        android:gravity="center"
+        tools:background="@drawable/lungs" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
