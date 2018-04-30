@@ -188,10 +188,10 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    static void start(Context context, String mode, String dbName) {
+    static void start(Context context, String mode, String field) {
         Intent intent = new Intent(context, Playing.class);
         intent.putExtra(EXTRA_MODE, mode);
-        intent.putExtra(EXTRA_FIELD, dbName);
+        intent.putExtra(EXTRA_FIELD, field);
         context.startActivity(intent);
     }
 }

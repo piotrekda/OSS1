@@ -48,9 +48,9 @@ public class Score extends AppCompatActivity {
         });
     }
 
-    static void start(Context context, String dbName) {
+    static void start(Context context, String field) {
         Intent intent = new Intent(context, Score.class);
-        intent.putExtra(EXTRA_FIELD, dbName);
+        intent.putExtra(EXTRA_FIELD, field);
         context.startActivity(intent);
     }
 }

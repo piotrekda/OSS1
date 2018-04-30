@@ -15,7 +15,7 @@ import com.example.piotr.oss.Testy.DbHelper.DbHelper;
 
 public class Done extends AppCompatActivity {
 
-    private static final String EXTRA_DB_NAME = "DB_NAME";
+    private static final String EXTRA_FIELD = "FIELD";
     private static final String EXTRA_SCORE = "SCORE";
     private static final String EXTRA_TOTAL = "TOTAL";
     private static final String EXTRA_CORRECT = "CORRECT";
@@ -30,8 +30,8 @@ public class Done extends AppCompatActivity {
         setContentView(R.layout.activity_done);
 
 
-        final String dbName = getIntent().getStringExtra(EXTRA_DB_NAME);
-        DbHelper db = new DbHelper(this, dbName);
+        final String field = getIntent().getStringExtra(EXTRA_FIELD);
+        DbHelper db = new DbHelper(this, field);
 
 
         txtResultScore = (TextView) findViewById(R.id.txtTotalScore);
@@ -42,7 +42,7 @@ public class Done extends AppCompatActivity {
         btnTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Test.start(context, dbName);
+                Test.start(context, field);
                 finish();
             }
         });
@@ -90,9 +90,9 @@ public class Done extends AppCompatActivity {
         }
     }
 
-    static void start(Context context, String dbName, int score, int total, int correct) {
+    static void start(Context context, String field, int score, int total, int correct) {
         Intent intent = new Intent(context, Done.class);
-        intent.putExtra(EXTRA_DB_NAME, dbName);
+        intent.putExtra(EXTRA_FIELD, field);
         intent.putExtra(EXTRA_SCORE, score);
         intent.putExtra(EXTRA_TOTAL, total);
         intent.putExtra(EXTRA_CORRECT, correct);
