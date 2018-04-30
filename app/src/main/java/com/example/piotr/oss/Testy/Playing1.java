@@ -1,5 +1,6 @@
 package com.example.piotr.oss.Testy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
@@ -20,6 +21,9 @@ import java.util.List;
 
 public class Playing1 extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String EXTRA_MODE = "MODE";
+    private static final String EXTRA_DB_NAME = "DB_NAME";
+
     final static long INTERVAL = 1000; // 1 second
     final static long TIMEOUT = 30000; // 7 sconds
     int progressValue = 0;
@@ -37,7 +41,7 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
     TextView txtScore, txtQuestion;
     TextView questiona;
     MediaPlayer mySound;
-
+    String dbName;
 
 
     @Override
@@ -45,12 +49,10 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
 
-        //Get Data from MainActivity
-        Bundle extra = getIntent().getExtras();
-        if (extra != null)
-            mode = extra.getString("MODE");
+        mode = getIntent().getStringExtra(EXTRA_MODE);
+        dbName = getIntent().getStringExtra(EXTRA_DB_NAME);
 
-        db = new DbHelper(this, "MyDB1.db");
+        db = new DbHelper(this, dbName);
 
         questiona = (TextView) findViewById(R.id.question);
         txtScore = (TextView) findViewById(R.id.txtScore);
@@ -127,13 +129,7 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
 
             mCountDown.start();
         } else {
-            Intent intent = new Intent(this, Done1.class);
-            Bundle dataSend = new Bundle();
-            dataSend.putInt("SCORE", score);
-            dataSend.putInt("TOTAL", totalQuestion);
-            dataSend.putInt("CORRECT", correctAnswer);
-            intent.putExtras(dataSend);
-            startActivity(intent);
+            Done1.start(this, dbName, score, totalQuestion, correctAnswer);
             finish();
         }
     }
@@ -174,6 +170,13 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
             txtScore.setText(String.format("%d", score));
         }
 
+    }
+
+    static void start(Context context, String mode, String dbName) {
+        Intent intent = new Intent(context, Playing1.class);
+        intent.putExtra(EXTRA_MODE, mode);
+        intent.putExtra(EXTRA_DB_NAME, dbName);
+        context.startActivity(intent);
     }
 }
 

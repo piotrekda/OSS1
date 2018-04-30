@@ -19,11 +19,9 @@ class StrefaTestu : AppCompatActivity() {
     }
 
     fun toTesty (view: View) {
-        val intent = Intent(applicationContext, Test::class.java)
-        startActivity(intent)
+        Test.start(this, "MyDB.db")
     }
     fun toTesty1 (view: View) {
-        val intent = Intent(applicationContext, Test1::class.java)
-        startActivity(intent)
+        Test1.start(this, "MyDB1.db")
     }
 }

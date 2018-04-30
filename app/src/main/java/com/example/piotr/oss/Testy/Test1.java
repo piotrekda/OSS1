@@ -19,6 +19,8 @@ import java.io.IOException;
 
 public class Test1 extends AppCompatActivity {
 
+    private static final String EXTRA_DB_NAME = "DB_NAME";
+
     SeekBar seekBar;
     TextView txtMode;
     Button btnPlay, btnScore;
@@ -30,7 +32,7 @@ public class Test1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        final String dbName = "MyDB1.db";
+        final String dbName = getIntent().getStringExtra(EXTRA_DB_NAME);
 
         ImageView background = findViewById(R.id.lungs);
         Drawable image = getResources().getDrawable(R.drawable.heart);
@@ -73,16 +75,14 @@ public class Test1 extends AppCompatActivity {
 
             }
         });
+        final Context context = this;
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Playing1.class);
-                intent.putExtra("MODE", getPlayMode()); // Send Mode to Playing page
-                startActivity(intent);
+                Playing1.start(context, getPlayMode(), dbName);
                 finish();
             }
         });
-        final Context context = this;
         btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,5 +110,11 @@ public class Test1 extends AppCompatActivity {
             return Common.MODE.HARD.toString();
 
         return null;
+    }
+
+    static void start(Context context, String dbName) {
+        Intent intent = new Intent(context, Test1.class);
+        intent.putExtra(EXTRA_DB_NAME, dbName);
+        context.startActivity(intent);
     }
 }
