@@ -5,13 +5,15 @@ import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.piotr.oss.R
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class PTS : AppCompatActivity() {
 
 
-    internal var mediaPlayer : MediaPlayer? = null
+
+    private lateinit var mediaPlayer : MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,30 +27,32 @@ class PTS : AppCompatActivity() {
 
     }
 
-
+    override fun onStart() {
+        super.onStart()
+        mediaPlayer = MediaPlayer.create(this, R.raw.k01)
+    }
 
     fun playMusic(view: View) {
-        if (mediaPlayer != null)
-        {
-            mediaPlayer!!.release()
-        }
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.k01)
+
+
 
         if (mediaPlayer!!.isPlaying) {
-            mediaPlayer!!.stop()
+            mediaPlayer!!.pause()
         } else {
             mediaPlayer!!.start()
+            Toast.makeText(this@PTS, "Załóż słuchawki", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mediaPlayer!!.release()
     }
 
 
 
-
         fun toKardio (view: View) {
-        if (mediaPlayer != null && mediaPlayer!!.isPlaying()) {
-            mediaPlayer!!.stop()
-        }
 
         val intent = Intent(applicationContext, Kardio::class.java)
         startActivity(intent)
