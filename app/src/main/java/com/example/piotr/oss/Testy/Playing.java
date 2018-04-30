@@ -53,12 +53,29 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         initFields();
         initViews();
         setUpButtons();
+
+        mCountDown = new CountDownTimer(30000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                progressBar.setProgress(progressValue);
+                progressValue++;
+            }
+
+            @Override
+            public void onFinish() {
+                mCountDown.cancel();
+                showQuestion(++index);
+            }
+        };
+        showQuestion(index);
     }
 
     private void initFields() {
         mode = getIntent().getStringExtra(EXTRA_MODE);
         field = getIntent().getStringExtra(EXTRA_FIELD);
         db = new DbHelper(this, field);
+        questionPlay = db.getQuestionMode(mode);
+        totalQuestion = questionPlay.size();
     }
 
     private void initViews() {
@@ -83,30 +100,13 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-
-        questionPlay = db.getQuestionMode(mode);
-        totalQuestion = questionPlay.size();
-
-        mCountDown = new CountDownTimer(30000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                progressBar.setProgress(progressValue);
-                progressValue++;
-            }
-
-            @Override
-            public void onFinish() {
-                mCountDown.cancel();
-                showQuestion(++index);
-            }
-        };
-        showQuestion(index);
+        tryToSetUpAudio(index);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mySound.release();
+        tryToReleaseAudio();
     }
 
     private void showQuestion(int index) {
@@ -116,12 +116,8 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
             progressBar.setProgress(0);
             progressValue = 0;
 
-            int soundId = getResourceId(questionPlay.get(index).getSound(), "raw", getPackageName());
+            tryToSetUpAudio(index);
 
-
-            if (soundId != 0) {
-                mySound = MediaPlayer.create(this, soundId);
-            }
             String ImageId = questionPlay.get(index).getImage();
 
             if (ImageId.equals("b")) {
@@ -140,6 +136,13 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         } else {
             Done.start(this, field, score, totalQuestion, correctAnswer);
             finish();
+        }
+    }
+
+    private void tryToSetUpAudio(int index) {
+        int soundId = getResourceId(questionPlay.get(index).getSound(), "raw", getPackageName());
+        if (soundId != 0) {
+            mySound = MediaPlayer.create(this, soundId);
         }
     }
 
@@ -163,9 +166,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (mySound != null && mySound.isPlaying()) {
-            mySound.stop();
-        }
+        tryToReleaseAudio();
         mCountDown.cancel();
         if (index < totalQuestion) {
             Button clickedButton = (Button) v;
@@ -179,6 +180,12 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
             txtScore.setText(String.format("%d", score));
         }
 
+    }
+
+    private void tryToReleaseAudio() {
+        if (mySound != null) {
+            mySound.release();
+        }
     }
 
     static void start(Context context, String mode, String dbName) {
