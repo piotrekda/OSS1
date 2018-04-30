@@ -30,7 +30,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         File file = new File(DB_PATH + "MyDB.db");
-        if(file.exists())
+        if (file.exists())
             openDataBase(); // Add this line to fix db.insert can't insert values
         this.mContext = context;
     }
@@ -85,7 +85,6 @@ public class DbHelper extends SQLiteOpenHelper {
             }
         }
     }
-
 
 
     @Override
@@ -173,7 +172,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     //Insert Score to Ranking table
     public void insertScore(double score) {
-        String query = "INSERT INTO Ranking(Score) VALUES("+score+")";
+        String query = "INSERT INTO Ranking(Score) VALUES(" + score + ")";
         mDataBase.execSQL(query);
     }
 
@@ -204,29 +203,26 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     //Update version 2.0
-    public int getPlayCount(int level)
-    {
+    public int getPlayCount(int level) {
         int result = 0;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c;
-        try{
-            c = db.rawQuery("SELECT PlayCount FROM UserPlayCount WHERE Level="+level+";",null);
-            if(c == null) return 0;
+        try {
+            c = db.rawQuery("SELECT PlayCount FROM UserPlayCount WHERE Level=" + level + ";", null);
+            if (c == null) return 0;
             c.moveToNext();
-            do{
-                result  = c.getInt(c.getColumnIndex("PlayCount"));
-            }while(c.moveToNext());
+            do {
+                result = c.getInt(c.getColumnIndex("PlayCount"));
+            } while (c.moveToNext());
             c.close();
-        }catch (Exception ex)
-        {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
     }
 
-    public void updatePlayCount(int level,int playCount)
-    {
-        String query = String.format("UPDATE UserPlayCount Set PlayCount = %d WHERE Level = %d",playCount,level);
+    public void updatePlayCount(int level, int playCount) {
+        String query = String.format("UPDATE UserPlayCount Set PlayCount = %d WHERE Level = %d", playCount, level);
         mDataBase.execSQL(query);
     }
 }
