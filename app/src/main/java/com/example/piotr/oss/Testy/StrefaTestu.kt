@@ -22,6 +22,6 @@ class StrefaTestu : AppCompatActivity() {
         Test.start(this, "lungs")
     }
     fun toTesty1 (view: View) {
-        Test1.start(this, "heart")
+        Test.start(this, "heart")
     }
 }

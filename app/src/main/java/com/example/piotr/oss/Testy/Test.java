@@ -2,7 +2,6 @@ package com.example.piotr.oss.Testy;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,8 +34,8 @@ public class Test extends AppCompatActivity {
         final String field = getIntent().getStringExtra(EXTRA_FIELD);
 
         ImageView background = findViewById(R.id.lungs);
-        Drawable image = getResources().getDrawable(R.drawable.lungs);
-        background.setImageDrawable(image);
+        int id = getResources().getIdentifier(field, "drawable", getPackageName());
+        background.setImageResource(id);
 
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         txtMode = (TextView) findViewById(R.id.txtMode);
