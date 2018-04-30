@@ -17,7 +17,7 @@ import java.util.List;
 
 public class Score extends AppCompatActivity {
 
-    private static final String EXTRA_DB_NAME = "DB_NAME";
+    private static final String EXTRA_FIELD = "FIELD";
 
     ListView lstView;
     ImageView Back;
@@ -27,31 +27,30 @@ public class Score extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        String dbName = getIntent().getStringExtra(EXTRA_DB_NAME);
+        final String field = getIntent().getStringExtra(EXTRA_FIELD);
 
         Back = (ImageView) findViewById(R.id.Back);
 
         lstView = (ListView) findViewById(R.id.lstRanking);
-        DbHelper db = new DbHelper(this, dbName);
+        DbHelper db = new DbHelper(this, field);
         List<Ranking> lstRanking = db.getRanking();
         if (lstRanking.size() > 0) {
             CustomAdapter adapter = new CustomAdapter(this, lstRanking);
             lstView.setAdapter(adapter);
         }
 
+        final Context context = this;
         Back.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Test.class);
-                startActivity(intent);
-                finish();
+                Test.start(context, field);
             }
         });
     }
 
     static void start(Context context, String dbName) {
         Intent intent = new Intent(context, Score.class);
-        intent.putExtra(EXTRA_DB_NAME, dbName);
+        intent.putExtra(EXTRA_FIELD, dbName);
         context.startActivity(intent);
     }
 }
