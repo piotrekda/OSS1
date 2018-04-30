@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.piotr.oss.Nauka.Kardio.Kardio
+import com.example.piotr.oss.Nauka.Pulmono.Pulmono
 
 import com.example.piotr.oss.Testy.Test1
 
@@ -23,7 +24,7 @@ class strefaNauki : AppCompatActivity() {
         startActivity(intent)
     }
     fun toPulmono (view: View) {
-        val intent = Intent(applicationContext, Test1::class.java)
+        val intent = Intent(applicationContext, Pulmono::class.java)
         startActivity(intent)
     }
 }

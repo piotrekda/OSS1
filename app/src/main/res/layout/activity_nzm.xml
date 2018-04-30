@@ -9,7 +9,7 @@
 
     android:background="@android:color/white"
 
-    tools:context=".Nauka.Kardio.PTS">
+    tools:context=".Nauka.Kardio.NZM">
 
 
     <android.support.v7.widget.Toolbar
@@ -47,40 +47,42 @@
         android:onClick="toKardio"
         android:src="@drawable/back1" />
 
-    <TextView
-        android:id="@+id/textView"
+    <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="337dp"
         android:layout_height="339dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="89dp"
-        android:textColor="#000000"
-        android:text="TextView" />
+        android:layout_marginTop="91dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="339dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="TextView"
+            android:textColor="#000000" />
+
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="126dp"
-        android:layout_height="122dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="19dp"
-        android:onClick="toPTS1"
-        app:srcCompat="@drawable/tonyserca" />
+        android:layout_width="114dp"
+        android:layout_height="92dp"
+        android:layout_alignBottom="@+id/playsound"
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView2"
-        android:layout_alignEnd="@+id/imageView2"
-        app:srcCompat="@android:drawable/ic_menu_zoom" />
+        android:layout_alignStart="@+id/scroll"
+        app:srcCompat="@drawable/nzm" />
+
 
     <ImageView
         android:id="@+id/playsound"
         android:layout_width="134dp"
         android:layout_height="118dp"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_below="@+id/textView"
+
+        android:layout_alignEnd="@+id/scroll"
+        android:layout_below="@+id/scroll"
         android:onClick="playMusic"
         app:srcCompat="@drawable/e11" />
 </RelativeLayout>

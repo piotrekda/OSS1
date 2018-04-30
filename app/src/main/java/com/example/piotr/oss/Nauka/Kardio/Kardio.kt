@@ -36,6 +36,41 @@ class Kardio : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun toIIITS (view: View) {
+        val intent = Intent(applicationContext, IIITS::class.java)
+        startActivity(intent)
+    }
+
+    fun toIVTS (view: View) {
+        val intent = Intent(applicationContext, IVTS::class.java)
+        startActivity(intent)
+    }
+    fun toSZA(view: View) {
+        val intent = Intent(applicationContext, SZA::class.java)
+        startActivity(intent)
+    }
+
+    fun toNZA(view: View) {
+        val intent = Intent(applicationContext, NZA::class.java)
+        startActivity(intent)
+    }
+
+    fun toSZM(view: View) {
+        val intent = Intent(applicationContext, SZM::class.java)
+        startActivity(intent)
+    }
+    fun toNZM(view: View) {
+        val intent = Intent(applicationContext, NZM::class.java)
+        startActivity(intent)
+    }
+    fun toASD(view: View) {
+        val intent = Intent(applicationContext, ASD::class.java)
+        startActivity(intent)
+    }
+    fun toVSD(view: View) {
+        val intent = Intent(applicationContext, VSD::class.java)
+        startActivity(intent)
+    }
 
 
 

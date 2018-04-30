@@ -69,11 +69,7 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
         btnC.setOnClickListener(this);
         btnD.setOnClickListener(this);
 
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
         questionPlay = db.getQuestionMode(mode);
         totalQuestion = questionPlay.size();

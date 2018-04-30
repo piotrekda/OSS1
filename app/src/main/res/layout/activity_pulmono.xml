@@ -9,7 +9,7 @@
 
     android:background="@android:color/white"
 
-    tools:context=".Nauka.Kardio.Kardio">
+    tools:context=".Nauka.Pulmono.Pulmono">
 
 
     <Button
@@ -20,8 +20,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="33dp"
         android:background="@drawable/rounded_button"
-        android:text="VSD"
-        android:onClick="toVSD"
+        android:text="Tarcie opłucnowe"
+        android:onClick="toTO"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -34,8 +34,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="79dp"
         android:background="@drawable/rounded_button"
-        android:text="ASD"
-        android:onClick="toASD"
+        android:text="Furczenie"
+        android:onClick="toF"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -48,8 +48,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="172dp"
         android:background="@drawable/rounded_button1"
-        android:text="Stenoza zastawki mitralnej"
-        android:onClick="toSZM"
+        android:text="Świsty wydechowe"
+        android:onClick="toSWy"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -62,8 +62,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="125dp"
         android:background="@drawable/rounded_button"
-        android:text="Niedomykalność zastawki mitralnej"
-        android:onClick="toNZM"
+        android:text="Świsty wdechowe (stridor)"
+        android:onClick="toSWd"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -76,8 +76,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="218dp"
         android:background="@drawable/rounded_button"
-        android:text="Niedomykalność zastawki aortalnej"
-        android:onClick="toNZA"
+        android:text="Rżężenie grubobańkowe"
+        android:onClick="toRG"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -90,8 +90,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="219dp"
         android:background="@drawable/rounded_button"
-        android:text="IV ton serca"
-        android:onClick="toIVTS"
+        android:text="Szmer oskrzelowy"
+        android:onClick="toSO"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -102,8 +102,8 @@
         android:layout_height="36dp"
         android:layout_centerInParent="true"
         android:background="@drawable/rounded_button"
-        android:text="Stenoza zastawki aortalnej"
-        android:onClick="toSZA"
+        android:text="Rżężenie drobnobańkowe (trzeszczenia)"
+        android:onClick="toRD"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -116,8 +116,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="173dp"
         android:background="@drawable/rounded_button1"
-        android:text="III ton serca"
-        android:onClick="toIIITS"
+        android:text="Szmer pęcherzykowy"
+        android:onClick="toSP"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -130,8 +130,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="127dp"
         android:background="@drawable/rounded_button"
-        android:text="Prawidłowe tony serca"
-        android:onClick="toPTS"
+        android:text="Szmer tchawiczy"
+        android:onClick="toST"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -179,8 +179,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="81dp"
         android:background="@drawable/rounded_button"
-        android:onClick="toJO"
         android:text="Jak osłuchiwać"
+        android:onClick="toJOP"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold" />
