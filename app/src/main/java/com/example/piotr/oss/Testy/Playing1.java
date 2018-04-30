@@ -5,7 +5,6 @@ import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,7 +44,7 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playing1);
+        setContentView(R.layout.activity_playing);
 
         //Get Data from MainActivity
         Bundle extra = getIntent().getExtras();
