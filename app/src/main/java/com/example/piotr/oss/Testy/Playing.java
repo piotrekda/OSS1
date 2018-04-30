@@ -22,10 +22,8 @@ import java.util.List;
 public class Playing extends AppCompatActivity implements View.OnClickListener {
 
     private static final String EXTRA_MODE = "MODE";
-    private static final String EXTRA_DB_NAME = "DB_NAME";
+    private static final String EXTRA_FIELD = "FIELD";
 
-    final static long INTERVAL = 1000; // 1 second
-    final static long TIMEOUT = 30000; // 7 sconds
     int progressValue = 0;
 
     CountDownTimer mCountDown; // for progressbar
@@ -41,34 +39,45 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     TextView txtScore, txtQuestion;
     TextView questiona;
     MediaPlayer mySound;
-    String dbName;
+    String field;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
+        makeInitialization();
+    }
 
+    private void makeInitialization() {
+        initFields();
+        initViews();
+        setUpButtons();
+    }
+
+    private void initFields() {
         mode = getIntent().getStringExtra(EXTRA_MODE);
-        dbName = getIntent().getStringExtra(EXTRA_DB_NAME);
+        field = getIntent().getStringExtra(EXTRA_FIELD);
+        db = new DbHelper(this, field);
+    }
 
-        db = new DbHelper(this, dbName);
+    private void initViews() {
+        questiona = findViewById(R.id.question);
+        txtScore = findViewById(R.id.txtScore);
+        txtQuestion = findViewById(R.id.txtQuestion);
+        progressBar = findViewById(R.id.progressBar);
+        imageView = findViewById(R.id.button_play);
+        btnA = findViewById(R.id.btnAnswerA);
+        btnB = findViewById(R.id.btnAnswerB);
+        btnC = findViewById(R.id.btnAnswerC);
+        btnD = findViewById(R.id.btnAnswerD);
+    }
 
-        questiona = (TextView) findViewById(R.id.question);
-        txtScore = (TextView) findViewById(R.id.txtScore);
-        txtQuestion = (TextView) findViewById(R.id.txtQuestion);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        imageView = (ImageView) findViewById(R.id.button_play);
-        btnA = (Button) findViewById(R.id.btnAnswerA);
-        btnB = (Button) findViewById(R.id.btnAnswerB);
-        btnC = (Button) findViewById(R.id.btnAnswerC);
-        btnD = (Button) findViewById(R.id.btnAnswerD);
-
+    private void setUpButtons() {
         btnA.setOnClickListener(this);
         btnB.setOnClickListener(this);
         btnC.setOnClickListener(this);
         btnD.setOnClickListener(this);
-
     }
 
     @Override
@@ -78,7 +87,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         questionPlay = db.getQuestionMode(mode);
         totalQuestion = questionPlay.size();
 
-        mCountDown = new CountDownTimer(TIMEOUT, INTERVAL) {
+        mCountDown = new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 progressBar.setProgress(progressValue);
@@ -129,7 +138,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
             mCountDown.start();
         } else {
-            Done.start(this, dbName, score, totalQuestion, correctAnswer);
+            Done.start(this, field, score, totalQuestion, correctAnswer);
             finish();
         }
     }
@@ -175,7 +184,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     static void start(Context context, String mode, String dbName) {
         Intent intent = new Intent(context, Playing.class);
         intent.putExtra(EXTRA_MODE, mode);
-        intent.putExtra(EXTRA_DB_NAME, dbName);
+        intent.putExtra(EXTRA_FIELD, dbName);
         context.startActivity(intent);
     }
 }
