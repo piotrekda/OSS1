@@ -37,9 +37,6 @@
             android:name=".Testy.Playing1"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Testy.Score1"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Testy.Done1"
             android:screenOrientation="portrait" />
         <activity

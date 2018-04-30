@@ -1,18 +1,19 @@
 package com.example.piotr.oss.Testy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.piotr.oss.R;
 import com.example.piotr.oss.Testy.Common.Common;
 import com.example.piotr.oss.Testy.DbHelper.DbHelper;
-import com.example.piotr.oss.R;
 
 import java.io.IOException;
 
@@ -29,6 +30,8 @@ public class Test extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
+        final String dbName = "MyDB.db";
+
         ImageView background = findViewById(R.id.lungs);
         Drawable image = getResources().getDrawable(R.drawable.lungs);
         background.setImageDrawable(image);
@@ -40,7 +43,7 @@ public class Test extends AppCompatActivity {
         Back = (ImageView) findViewById(R.id.Back);
 
 
-        db = new DbHelper(this, "MyDB.db");
+        db = new DbHelper(this, dbName);
         try {
             db.createDataBase();
         } catch (IOException e) {
@@ -79,12 +82,11 @@ public class Test extends AppCompatActivity {
                 finish();
             }
         });
-
+        final Context context = this;
         btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Score.class);
-                startActivity(intent);
+                Score.start(context, dbName);
                 finish();
             }
         });
