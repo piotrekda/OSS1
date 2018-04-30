@@ -11,8 +11,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.piotr.oss.Testy.DbHelper.Db1Helper;
-
+import com.example.piotr.oss.Testy.DbHelper.DbHelper;
 import com.example.piotr.oss.Testy.Model.Question;
 import com.example.piotr.oss.R;
 
@@ -27,7 +26,7 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
 
     CountDownTimer mCountDown; // for progressbar
     List<Question> questionPlay = new ArrayList<>(); //total Question
-    Db1Helper db;
+    DbHelper db;
     int index = 0, score = 0, thisQuestion = 0, totalQuestion, correctAnswer;
     String mode = "";
 
@@ -51,7 +50,7 @@ public class Playing1 extends AppCompatActivity implements View.OnClickListener 
         if (extra != null)
             mode = extra.getString("MODE");
 
-        db = new Db1Helper(this);
+        db = new DbHelper(this, "MyDB1.db");
 
         questiona = (TextView) findViewById(R.id.question);
         txtScore = (TextView) findViewById(R.id.txtScore);

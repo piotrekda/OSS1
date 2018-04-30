@@ -21,7 +21,7 @@ public class Score extends AppCompatActivity {
         setContentView(R.layout.activity_score);
 
         lstView = (ListView)findViewById(R.id.lstRanking);
-        DbHelper db = new DbHelper(this);
+        DbHelper db = new DbHelper(this, "MyDB.db");
         List<Ranking> lstRanking = db.getRanking();
         if(lstRanking.size() > 0)
         {

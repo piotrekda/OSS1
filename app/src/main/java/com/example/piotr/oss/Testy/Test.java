@@ -40,7 +40,7 @@ public class Test extends AppCompatActivity {
         Back = (ImageView) findViewById(R.id.Back);
 
 
-        db = new DbHelper(this);
+        db = new DbHelper(this, "MyDB.db");
         try {
             db.createDataBase();
         } catch (IOException e) {

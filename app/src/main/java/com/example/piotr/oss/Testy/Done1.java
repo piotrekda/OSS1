@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.piotr.oss.Testy.DbHelper.Db1Helper;
 import com.example.piotr.oss.R;
+import com.example.piotr.oss.Testy.DbHelper.DbHelper;
 
 
 public class Done1 extends AppCompatActivity {
@@ -23,7 +23,7 @@ public class Done1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_done);
 
-        Db1Helper db = new Db1Helper(this);
+        DbHelper db = new DbHelper(this, "MyDB1.db");
 
 
         txtResultScore = (TextView) findViewById(R.id.txtTotalScore);

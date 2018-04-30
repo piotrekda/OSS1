@@ -11,8 +11,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.piotr.oss.Testy.Common.Common;
-import com.example.piotr.oss.Testy.DbHelper.Db1Helper;
 import com.example.piotr.oss.R;
+import com.example.piotr.oss.Testy.DbHelper.DbHelper;
 
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class Test1 extends AppCompatActivity {
     SeekBar seekBar;
     TextView txtMode;
     Button btnPlay, btnScore;
-    Db1Helper db;
+    DbHelper db;
     ImageView Back;
 
     @Override
@@ -40,7 +40,7 @@ public class Test1 extends AppCompatActivity {
         Back = (ImageView) findViewById(R.id.Back);
 
 
-        db = new Db1Helper(this);
+        db = new DbHelper(this, "MyDB1.db");
         try {
             db.createDataBase();
         } catch (IOException e) {

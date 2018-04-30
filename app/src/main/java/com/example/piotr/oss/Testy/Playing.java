@@ -50,7 +50,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         if (extra != null)
             mode = extra.getString("MODE");
 
-        db = new DbHelper(this);
+        db = new DbHelper(this, "MyDB.db");
 
         questiona = (TextView) findViewById(R.id.question);
         txtScore = (TextView) findViewById(R.id.txtScore);

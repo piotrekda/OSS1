@@ -20,30 +20,30 @@ import java.util.List;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "MyDB.db";
+    private String dbName;
     private static String DB_PATH = "";
     private SQLiteDatabase mDataBase;
     private Context mContext = null;
 
-    public DbHelper(Context context) {
-        super(context, DB_NAME, null, 1);
-
+    public DbHelper(Context context, String dbName) {
+        super(context, dbName, null, 1);
+        this.dbName = dbName;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-        File file = new File(DB_PATH + "MyDB.db");
+        File file = new File(DB_PATH + dbName);
         if (file.exists())
             openDataBase(); // Add this line to fix db.insert can't insert values
         this.mContext = context;
     }
 
     public void openDataBase() {
-        String myPath = DB_PATH + DB_NAME;
+        String myPath = DB_PATH + dbName;
         mDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
     public void copyDataBase() throws IOException {
         try {
-            InputStream myInput = mContext.getAssets().open(DB_NAME);
-            String outputFileName = DB_PATH + DB_NAME;
+            InputStream myInput = mContext.getAssets().open(dbName);
+            String outputFileName = DB_PATH + dbName;
             OutputStream myOutput = new FileOutputStream(outputFileName);
 
             byte[] buffer = new byte[1024];
@@ -62,7 +62,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private boolean checkDataBase() {
         SQLiteDatabase tempDB = null;
         try {
-            String myPath = DB_PATH + DB_NAME;
+            String myPath = DB_PATH + dbName;
             tempDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
         } catch (SQLiteException e) {
             e.printStackTrace();

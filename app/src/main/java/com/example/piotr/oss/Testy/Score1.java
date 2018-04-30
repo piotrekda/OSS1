@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.piotr.oss.Testy.Common.CustomAdapter;
-import com.example.piotr.oss.Testy.DbHelper.Db1Helper;
 
+import com.example.piotr.oss.Testy.DbHelper.DbHelper;
 import com.example.piotr.oss.Testy.Model.Ranking;
 import com.example.piotr.oss.R;
 
@@ -22,7 +22,7 @@ public class Score1 extends AppCompatActivity {
         setContentView(R.layout.activity_score);
 
         lstView = (ListView)findViewById(R.id.lstRanking);
-        Db1Helper db = new Db1Helper(this);
+        DbHelper db = new DbHelper(this, "MyDB1.db");
         List<Ranking> lstRanking = db.getRanking();
         if(lstRanking.size() > 0)
         {

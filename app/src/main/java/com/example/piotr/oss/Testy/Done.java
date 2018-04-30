@@ -23,7 +23,7 @@ public class Done extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_done);
 
-        DbHelper db = new DbHelper(this);
+        DbHelper db = new DbHelper(this, "MyDB.db");
 
 
         txtResultScore = (TextView) findViewById(R.id.txtTotalScore);
