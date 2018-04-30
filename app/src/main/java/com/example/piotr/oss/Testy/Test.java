@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class Test extends AppCompatActivity {
 
-    private static final String EXTRA_DB_NAME = "DB_NAME";
+    private static final String EXTRA_FIELD = "FIELD";
 
     SeekBar seekBar;
     TextView txtMode;
@@ -32,7 +32,7 @@ public class Test extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        final String dbName = getIntent().getStringExtra(EXTRA_DB_NAME);
+        final String field = getIntent().getStringExtra(EXTRA_FIELD);
 
         ImageView background = findViewById(R.id.lungs);
         Drawable image = getResources().getDrawable(R.drawable.lungs);
@@ -45,7 +45,7 @@ public class Test extends AppCompatActivity {
         Back = (ImageView) findViewById(R.id.Back);
 
 
-        db = new DbHelper(this, dbName);
+        db = new DbHelper(this, field);
         try {
             db.createDataBase();
         } catch (IOException e) {
@@ -79,14 +79,14 @@ public class Test extends AppCompatActivity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Playing.start(context, getPlayMode(), dbName);
+                Playing.start(context, getPlayMode(), field);
                 finish();
             }
         });
         btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Score.start(context, dbName);
+                Score.start(context, field);
                 finish();
             }
         });
@@ -112,9 +112,9 @@ public class Test extends AppCompatActivity {
         return null;
     }
 
-    static void start(Context context, String dbName) {
+    static void start(Context context, String field) {
         Intent intent = new Intent(context, Test.class);
-        intent.putExtra(EXTRA_DB_NAME, dbName);
+        intent.putExtra(EXTRA_FIELD, field);
         context.startActivity(intent);
     }
 }

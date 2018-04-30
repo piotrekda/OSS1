@@ -19,9 +19,9 @@ class StrefaTestu : AppCompatActivity() {
     }
 
     fun toTesty (view: View) {
-        Test.start(this, "MyDB.db")
+        Test.start(this, "lungs")
     }
     fun toTesty1 (view: View) {
-        Test1.start(this, "MyDB1.db")
+        Test1.start(this, "heart")
     }
 }
