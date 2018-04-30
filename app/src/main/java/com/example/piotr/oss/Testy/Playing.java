@@ -1,5 +1,6 @@
 package com.example.piotr.oss.Testy;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
@@ -20,8 +21,9 @@ import java.util.List;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener {
 
-    final static long INTERVAL = 1000; // 1 second
-    final static long TIMEOUT = 30000; // 7 sconds
+    private static final String EXTRA_MODE = "MODE";
+    private static final String EXTRA_FIELD = "FIELD";
+
     int progressValue = 0;
 
     CountDownTimer mCountDown; // for progressbar
@@ -37,42 +39,22 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     TextView txtScore, txtQuestion;
     TextView questiona;
     MediaPlayer mySound;
-
+    String field;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
+        makeInitialization();
+    }
 
-        //Get Data from MainActivity
-        Bundle extra = getIntent().getExtras();
-        if (extra != null)
-            mode = extra.getString("MODE");
+    private void makeInitialization() {
+        initFields();
+        initViews();
+        setUpButtons();
 
-        db = new DbHelper(this);
-
-        questiona = (TextView) findViewById(R.id.question);
-        txtScore = (TextView) findViewById(R.id.txtScore);
-        txtQuestion = (TextView) findViewById(R.id.txtQuestion);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        imageView = (ImageView) findViewById(R.id.button_play);
-        btnA = (Button) findViewById(R.id.btnAnswerA);
-        btnB = (Button) findViewById(R.id.btnAnswerB);
-        btnC = (Button) findViewById(R.id.btnAnswerC);
-        btnD = (Button) findViewById(R.id.btnAnswerD);
-
-        btnA.setOnClickListener(this);
-        btnB.setOnClickListener(this);
-        btnC.setOnClickListener(this);
-        btnD.setOnClickListener(this);
-
-
-
-        questionPlay = db.getQuestionMode(mode);
-        totalQuestion = questionPlay.size();
-
-        mCountDown = new CountDownTimer(TIMEOUT, INTERVAL) {
+        mCountDown = new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 progressBar.setProgress(progressValue);
@@ -88,10 +70,43 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         showQuestion(index);
     }
 
+    private void initFields() {
+        mode = getIntent().getStringExtra(EXTRA_MODE);
+        field = getIntent().getStringExtra(EXTRA_FIELD);
+        db = new DbHelper(this, field);
+        questionPlay = db.getQuestionMode(mode);
+        totalQuestion = questionPlay.size();
+    }
+
+    private void initViews() {
+        questiona = findViewById(R.id.question);
+        txtScore = findViewById(R.id.txtScore);
+        txtQuestion = findViewById(R.id.txtQuestion);
+        progressBar = findViewById(R.id.progressBar);
+        imageView = findViewById(R.id.button_play);
+        btnA = findViewById(R.id.btnAnswerA);
+        btnB = findViewById(R.id.btnAnswerB);
+        btnC = findViewById(R.id.btnAnswerC);
+        btnD = findViewById(R.id.btnAnswerD);
+    }
+
+    private void setUpButtons() {
+        btnA.setOnClickListener(this);
+        btnB.setOnClickListener(this);
+        btnC.setOnClickListener(this);
+        btnD.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tryToSetUpAudio(index);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
-        mySound.release();
+        tryToReleaseAudio();
     }
 
     private void showQuestion(int index) {
@@ -101,12 +116,8 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
             progressBar.setProgress(0);
             progressValue = 0;
 
-            int soundId = getResourceId(questionPlay.get(index).getSound(), "raw", getPackageName());
+            tryToSetUpAudio(index);
 
-
-            if (soundId != 0) {
-                mySound = MediaPlayer.create(this, soundId);
-            }
             String ImageId = questionPlay.get(index).getImage();
 
             if (ImageId.equals("b")) {
@@ -123,14 +134,15 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
             mCountDown.start();
         } else {
-            Intent intent = new Intent(this, Done.class);
-            Bundle dataSend = new Bundle();
-            dataSend.putInt("SCORE", score);
-            dataSend.putInt("TOTAL", totalQuestion);
-            dataSend.putInt("CORRECT", correctAnswer);
-            intent.putExtras(dataSend);
-            startActivity(intent);
+            Done.start(this, field, score, totalQuestion, correctAnswer);
             finish();
+        }
+    }
+
+    private void tryToSetUpAudio(int index) {
+        int soundId = getResourceId(questionPlay.get(index).getSound(), "raw", getPackageName());
+        if (soundId != 0) {
+            mySound = MediaPlayer.create(this, soundId);
         }
     }
 
@@ -154,9 +166,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (mySound != null && mySound.isPlaying()) {
-            mySound.stop();
-        }
+        tryToReleaseAudio();
         mCountDown.cancel();
         if (index < totalQuestion) {
             Button clickedButton = (Button) v;
@@ -170,6 +180,19 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
             txtScore.setText(String.format("%d", score));
         }
 
+    }
+
+    private void tryToReleaseAudio() {
+        if (mySound != null) {
+            mySound.release();
+        }
+    }
+
+    static void start(Context context, String mode, String field) {
+        Intent intent = new Intent(context, Playing.class);
+        intent.putExtra(EXTRA_MODE, mode);
+        intent.putExtra(EXTRA_FIELD, field);
+        context.startActivity(intent);
     }
 }
 

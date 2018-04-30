@@ -31,18 +31,6 @@
             android:name=".Testy.Score"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Testy.Test1"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Testy.Playing1"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Testy.Score1"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Testy.Done1"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Testy.StrefaTestu"
             android:screenOrientation="portrait" />
         <activity

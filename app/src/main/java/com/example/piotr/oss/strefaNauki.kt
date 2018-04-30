@@ -1,13 +1,11 @@
 package com.example.piotr.oss
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.piotr.oss.Nauka.Kardio.Kardio
 import com.example.piotr.oss.Nauka.Pulmono.Pulmono
-
-import com.example.piotr.oss.Testy.Test1
 
 class strefaNauki : AppCompatActivity() {
 

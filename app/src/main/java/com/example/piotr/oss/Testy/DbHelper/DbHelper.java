@@ -20,30 +20,28 @@ import java.util.List;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "MyDB.db";
     private static String DB_PATH = "";
     private SQLiteDatabase mDataBase;
     private Context mContext = null;
 
-    public DbHelper(Context context) {
-        super(context, DB_NAME, null, 1);
-
+    public DbHelper(Context context, String field) {
+        super(context, field + ".db", null, 1);
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-        File file = new File(DB_PATH + "MyDB.db");
-        if(file.exists())
+        File file = new File(DB_PATH + getDatabaseName());
+        if (file.exists())
             openDataBase(); // Add this line to fix db.insert can't insert values
         this.mContext = context;
     }
 
     public void openDataBase() {
-        String myPath = DB_PATH + DB_NAME;
+        String myPath = DB_PATH + getDatabaseName();
         mDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
 
     public void copyDataBase() throws IOException {
         try {
-            InputStream myInput = mContext.getAssets().open(DB_NAME);
-            String outputFileName = DB_PATH + DB_NAME;
+            InputStream myInput = mContext.getAssets().open(getDatabaseName());
+            String outputFileName = DB_PATH + getDatabaseName();
             OutputStream myOutput = new FileOutputStream(outputFileName);
 
             byte[] buffer = new byte[1024];
@@ -62,7 +60,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private boolean checkDataBase() {
         SQLiteDatabase tempDB = null;
         try {
-            String myPath = DB_PATH + DB_NAME;
+            String myPath = DB_PATH + getDatabaseName();
             tempDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
         } catch (SQLiteException e) {
             e.printStackTrace();
@@ -85,7 +83,6 @@ public class DbHelper extends SQLiteOpenHelper {
             }
         }
     }
-
 
 
     @Override
@@ -173,7 +170,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     //Insert Score to Ranking table
     public void insertScore(double score) {
-        String query = "INSERT INTO Ranking(Score) VALUES("+score+")";
+        String query = "INSERT INTO Ranking(Score) VALUES(" + score + ")";
         mDataBase.execSQL(query);
     }
 
@@ -204,29 +201,26 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
     //Update version 2.0
-    public int getPlayCount(int level)
-    {
+    public int getPlayCount(int level) {
         int result = 0;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c;
-        try{
-            c = db.rawQuery("SELECT PlayCount FROM UserPlayCount WHERE Level="+level+";",null);
-            if(c == null) return 0;
+        try {
+            c = db.rawQuery("SELECT PlayCount FROM UserPlayCount WHERE Level=" + level + ";", null);
+            if (c == null) return 0;
             c.moveToNext();
-            do{
-                result  = c.getInt(c.getColumnIndex("PlayCount"));
-            }while(c.moveToNext());
+            do {
+                result = c.getInt(c.getColumnIndex("PlayCount"));
+            } while (c.moveToNext());
             c.close();
-        }catch (Exception ex)
-        {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return result;
     }
 
-    public void updatePlayCount(int level,int playCount)
-    {
-        String query = String.format("UPDATE UserPlayCount Set PlayCount = %d WHERE Level = %d",playCount,level);
+    public void updatePlayCount(int level, int playCount) {
+        String query = String.format("UPDATE UserPlayCount Set PlayCount = %d WHERE Level = %d", playCount, level);
         mDataBase.execSQL(query);
     }
 }
