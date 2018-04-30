@@ -19,7 +19,7 @@ public class Score1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_score1);
+        setContentView(R.layout.activity_score);
 
         lstView = (ListView)findViewById(R.id.lstRanking);
         Db1Helper db = new Db1Helper(this);
