@@ -36,7 +36,8 @@
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".strefaNauki"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Nauka.Kardio.Kardio"
             android:screenOrientation="portrait" />
