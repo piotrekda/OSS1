@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.piotr.oss.CommonKt;
 import com.example.piotr.oss.R;
 import com.example.piotr.oss.Testy.Common.Common;
 import com.example.piotr.oss.Testy.DbHelper.DbHelper;
@@ -24,12 +25,12 @@ public class Test extends AppCompatActivity {
     TextView txtMode;
     Button btnPlay, btnScore;
     DbHelper db;
-    ImageView Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        CommonKt.setUpActionBar(this);
 
         final String field = getIntent().getStringExtra(EXTRA_FIELD);
 
@@ -41,7 +42,6 @@ public class Test extends AppCompatActivity {
         txtMode = (TextView) findViewById(R.id.txtMode);
         btnPlay = (Button) findViewById(R.id.btnPlay);
         btnScore = (Button) findViewById(R.id.btnScore);
-        Back = (ImageView) findViewById(R.id.Back);
 
 
         db = new DbHelper(this, field);
@@ -86,15 +86,6 @@ public class Test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Score.start(context, field);
-                finish();
-            }
-        });
-
-        Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), StrefaTestu.class);
-                startActivity(intent);
                 finish();
             }
         });

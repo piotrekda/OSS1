@@ -20,7 +20,8 @@
         </activity>
         <activity
             android:name=".Testy.Test"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Testy.StrefaTestu"/>
         <activity
             android:name=".Testy.Playing"
             android:screenOrientation="portrait" />
