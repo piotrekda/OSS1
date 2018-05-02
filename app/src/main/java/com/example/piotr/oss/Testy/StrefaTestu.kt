@@ -6,16 +6,14 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.example.piotr.oss.MainActivity
 import com.example.piotr.oss.R
-import kotlinx.android.synthetic.main.toolbar.*
+import com.example.piotr.oss.setUpActionBar
 
 class StrefaTestu : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_strefa_testu)
-        setSupportActionBar(customtoolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = ""
+        setUpActionBar()
     }
     fun toMainActivity (view: View) {
         val intent = Intent(applicationContext, MainActivity::class.java)
