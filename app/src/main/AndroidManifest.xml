@@ -32,7 +32,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Testy.StrefaTestu"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".strefaNauki"
             android:screenOrientation="portrait" />
