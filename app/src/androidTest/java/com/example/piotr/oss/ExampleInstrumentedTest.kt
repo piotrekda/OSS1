@@ -1,4 +1,4 @@
-package com.example.piotr.oss
+package com.piotrek.piotr.oss
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.example.piotr.oss", appContext.packageName)
+        assertEquals("com.piotrek.piotr.oss", appContext.packageName)
     }
 }
