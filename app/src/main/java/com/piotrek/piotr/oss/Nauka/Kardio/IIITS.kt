@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -18,7 +19,7 @@ class IIITS : AppCompatActivity() {
         setContentView(R.layout.activity_iiits)
 
 
-        textView.setText("Patologiczny ton wczesnorozkurczowy, bardzo rzadko występuje fizjologicznie u dzieci i młodzieży. Najczęściej objaw ciężkiej choroby serca. Powstaje w fazie szybkiego biernego napełniania komór, gdy upośledzona jest podatność komory lub zwiększona objętość napływającej krwi. Składowa cwału wczesnorozkurczowego (cwału komorowego).")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologiczny ton wczesnorozkurczowy, bardzo rzadko występuje fizjologicznie u dzieci i młodzieży. Najczęściej objaw ciężkiej choroby serca. Powstaje w fazie szybkiego biernego napełniania komór, gdy upośledzona jest podatność komory lub zwiększona objętość napływającej krwi. Składowa cwału wczesnorozkurczowego (cwału komorowego)."))
 
 
     }

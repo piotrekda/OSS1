@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -18,8 +19,8 @@ class SZA : AppCompatActivity() {
         setContentView(R.layout.activity_sz)
 
 
-        textView.setText("Patologiczne zmniejszenie się pola powierzchni ujścia aortalnego, wpływające na utrudnienie wypływu krwi z lewej komory. Najczęściej jest to wada nabyta, wywołana przez zwyrodnienie, rzadko przez chorobę reumatyczną serca. Może występować też jako wada wrodzona (najczęściej dwupłatkowa zastawka aorty).\n" +
-                "Szmer śródskurczowy (mezosystoliczny) nad polem osłuchiwania zastawki, promieniujący do tętnic szyjnych (przy ciasnym zwężeniu). Głośność szmeru może nie odzwierciedlać stopnia zwężenia. Składowa aortalna II tonu ściszona lub nie występuje, tętno małe i leniwe, niekiedy słyszalny IV ton.\n")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br> Patologiczne zmniejszenie się pola powierzchni ujścia aortalnego, wpływające na utrudnienie wypływu krwi z lewej komory. Najczęściej jest to wada nabyta, wywołana przez zwyrodnienie, rzadko przez chorobę reumatyczną serca. Może występować też jako wada wrodzona (najczęściej dwupłatkowa zastawka aorty)." +
+                "<br> <b>  Charakterystyka  </b> <br> Szmer śródskurczowy (mezosystoliczny) nad polem osłuchiwania zastawki, promieniujący do tętnic szyjnych (przy ciasnym zwężeniu). Głośność szmeru może nie odzwierciedlać stopnia zwężenia. Składowa aortalna II tonu ściszona lub nie występuje, tętno małe i leniwe, niekiedy słyszalny IV ton."))
 
 
     }

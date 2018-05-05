@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -16,8 +17,8 @@ class VSD : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vsd)
-        textView.setText("Ubytek przegrody międzykomorowej (ang. ventricular septal defect, VSD) – najczęstsza wrodzona wada serca u noworodków. W późniejszym okresie życia przegroda może zamknąć się, w związku z tym ASD jest częstszą wrodzoną wadą u dorosłych. Zlokalizowany najczęściej w błoniastej części błoniastej przegrody.\n" +
-                "Szmer trwający przez cały okres skurczu serca (holosystoliczny), głośny, wstęgowaty, pokrywający się z II tonem serca (S2).\n")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Ubytek przegrody międzykomorowej (ang. ventricular septal defect, VSD) – najczęstsza wrodzona wada serca u noworodków. W późniejszym okresie życia przegroda może zamknąć się, w związku z tym ASD jest częstszą wrodzoną wadą u dorosłych. Zlokalizowany najczęściej w błoniastej części błoniastej przegrody." +
+                "<br> <b>  Charakterystyka  </b> <br>Szmer trwający przez cały okres skurczu serca (holosystoliczny), głośny, wstęgowaty, pokrywający się z II tonem serca (S2)."))
 
     }
 

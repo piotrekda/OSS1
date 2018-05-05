@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -16,7 +17,7 @@ class ST : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_st)
-        textView.setText("Szmer głośny, słyszalny dokładnie nad tchawicą. Faza wdechowa równa się wydechowej.")
+        textView.setText(Html.fromHtml("<br> <b>  Charakterystyka  </b> <br>Szmer głośny, słyszalny dokładnie nad tchawicą. Faza wdechowa równa się wydechowej."))
 
 
     }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -17,8 +18,8 @@ class SZM : AppCompatActivity() {
         setContentView(R.layout.activity_szm)
 
 
-        textView.setText("Patologiczne zmniejszenie się pola powierzchni ujścia zastawki mitralnej, utrudniające napływ krwi do lewej komory. Zwężenie ze względu na etiologię dzielimy na strukturalne (ograniczenie ruchomości płatków spowodowane przez zmiany organiczne w ich obrębie), czynnościowe (nieprawidłowe otwieranie płatów o prawidłowej strukturze) i względne (stany chorobowe przebiegające ze zwiększonym przepływem przez zastawkę mitralną)\n" +
-                "Szmer śródrozkurczowy (mezodiastoliczny) typu decrescendo, przechodzący w narastający (crescendo) szmer przedskurczowy, najgłośniejszy nad koniuszkiem serca. Nie promieniujący, głośny, „kłapiący” I ton serca s1. Ton (trzask) otwarcia zastawki mitralnej.\n")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologiczne zmniejszenie się pola powierzchni ujścia zastawki mitralnej, utrudniające napływ krwi do lewej komory. Zwężenie ze względu na etiologię dzielimy na strukturalne (ograniczenie ruchomości płatków spowodowane przez zmiany organiczne w ich obrębie), czynnościowe (nieprawidłowe otwieranie płatów o prawidłowej strukturze) i względne (stany chorobowe przebiegające ze zwiększonym przepływem przez zastawkę mitralną)" +
+                "<br> <b>  Charakterystyka  </b> <br>Szmer śródrozkurczowy (mezodiastoliczny) typu decrescendo, przechodzący w narastający (crescendo) szmer przedskurczowy, najgłośniejszy nad koniuszkiem serca. Nie promieniujący, głośny, „kłapiący” I ton serca s1. Ton (trzask) otwarcia zastawki mitralnej."))
 
 
     }

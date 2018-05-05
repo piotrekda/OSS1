@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -18,7 +19,7 @@ class SP : AppCompatActivity() {
         setContentView(R.layout.activity_sp)
 
 
-        textView.setText("Szmer zazwyczaj cichy, głównie wdechowy z wyraźnie zanaczoną przerwą przed cichszą wydechową fazą, ze stosunkiem składowej wdechowej do wydechowej 3 do 1.  Powodowany poprzez turbulentny przepływ powietrza przez oskrzela płatowe i segmentowe. Słyszalny nad niemal całymi płucami. Ściszenie powodowane jest przez: spadek napędu oddechowego, w rozedmie (upośledzeny jest przepływ powietrza do obwodowych części płuc), osłabienie przenoszenia szmeru (obecności płynu lub powietrza w jamie opłucnej), obecności dużych pęcherzy rozedmowych lub deformacji klatki piersiowej.")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br> Fizjologiczny szmer powodowany poprzez turbulentny przepływ powietrza przez oskrzela płatowe i segmentowe. Słyszalny nad niemal całymi płucami. Ściszenie powodowane jest przez: spadek napędu oddechowego, w rozedmie (upośledzony jest przepływ powietrza do obwodowych części płuc), osłabienie przenoszenia szmeru (obecność płynu lub powietrza w jamie opłucnej), obecność dużych pęcherzy rozedmowych lub deformacji klatki piersiowej. <br> <b>  Charakterystyka  </b> <br> Szmer zazwyczaj cichy, głównie wdechowy z wyraźnie zanaczoną przerwą przed cichszą wydechową fazą, ze stosunkiem składowej wdechowej do wydechowej 3 do 1."))
 
 
     }

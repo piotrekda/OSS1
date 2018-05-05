@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -18,7 +19,7 @@ class IVTS : AppCompatActivity() {
         setContentView(R.layout.activity_ivts)
 
 
-        textView.setText("Patologiczny ton późnorozkurczowy. Powstaje w późnej fazie rozkurczu w czasie skurczu przedsionków, na skutek upośledzonej podatności komory. Składowa cwału przedskurczowego (cwału przedsionkowego).")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologiczny ton późnorozkurczowy. Powstaje w późnej fazie rozkurczu w czasie skurczu przedsionków, na skutek upośledzonej podatności komory. Składowa cwału przedskurczowego (cwału przedsionkowego)."))
 
 
     }

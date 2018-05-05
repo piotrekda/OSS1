@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -17,7 +18,7 @@ class RG : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rg)
 
-        textView.setText("Przerywany, krótki szmer oddechowy. W porównaniu z trzeszczeniami jest głośniejszy, trwa dłużej i ma niższą częstotliwość. Określa się go także jako dźwięk bulgoczący. Są typowo wdechowe i związane z dużą ilością płynu w płucach.")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer oddechowy związany z dużą ilością płynu w płucach. <br> <b>  Charakterystyka  </b> <br>Typowo wdechowy, przerywany, krótki szmer oddechowy. W porównaniu z trzeszczeniami jest głośniejszy, trwa dłużej i ma niższą częstotliwość. Określa się go także jako dźwięk bulgoczący."))
 
 
     }

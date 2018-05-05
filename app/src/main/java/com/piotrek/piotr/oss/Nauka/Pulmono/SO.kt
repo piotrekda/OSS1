@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -15,7 +16,7 @@ class SO : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_so)
-        textView.setText("Szmer prawidłowo słyszalny nad tchawicą i dużymi oskrzelami, patologicznie nad obwodowymi częściami płuc (może wywołany być przez naciek zapalny lub krwotok). Faza wydechowa wyraźniej zaznaczona od wdechowej.")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer prawidłowo słyszalny nad tchawicą i dużymi oskrzelami, patologicznie nad obwodowymi częściami płuc (może wywołany być przez naciek zapalny lub krwotok). <br> <b>  Charakterystyka  </b> <br>Faza wydechowa wyraźniej zaznaczona od wdechowej."))
 
 
     }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -17,7 +18,7 @@ class F : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_f)
 
-        textView.setText("Ciągły, zarówno wdechowy i wydechowy szmer oddechowy o niskiej częstotliwości. Dźwięk wynika z obecności wydzieliny w drogach oddechowych, występuje w klatce piersiowej nad oskrzelami (nie nad pęcherzykami). Furczenia zazwyczaj ustępują po odkaszlnięciu.")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Dźwięk wynika z obecności wydzieliny w drogach oddechowych, występuje w klatce piersiowej nad oskrzelami (nie nad pęcherzykami). <br> <b>  Charakterystyka  </b> <br>Ciągły, zarówno wdechowy i wydechowy szmer oddechowy o niskiej częstotliwości. Furczenia zazwyczaj ustępują po odkaszlnięciu."))
 
 
     }

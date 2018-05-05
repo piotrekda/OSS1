@@ -17,7 +17,7 @@ class JO : AppCompatActivity() {
 
         textView.setText("Osłuchuj serce u spokojnie oddychającego pacjenta leżącego na plecach, w razie potrzeby polecając mu zatrzymanie oddechu w fazie wdechu lub wydechu. Szmery z prawego serca z reguły są głośniejsze w fazie wdechu.\n" +
                 "Na poniższej rycinie znajdują się 4 główne pola osłuchiwania serca wraz z ich centralnymi punktami:\n" +
-                "– pole osłuchiwania zastawki mitralnej [M] (lewe międzyżebrze przyśrodkowo od linii środkowo-obojczykowej)\n" +
+                "– pole osłuchiwania zastawki mitralnej [M] (V lewe międzyżebrze przyśrodkowo od linii środkowo-obojczykowej)\n" +
                 "– pole osłuchiwania zastawki trójdzielnej [T] (IV–V prawe międzyżebrze przy mostku)\n" +
                 "– pole osłuchiwania zastawki pnia płucnego [PP]  (II lewe międzyżebrze przy mostku)\n" +
                 "– pole osłuchiwania zastawki aorty [Ao] (II prawe międzyżebrze przy mostku)\n" +

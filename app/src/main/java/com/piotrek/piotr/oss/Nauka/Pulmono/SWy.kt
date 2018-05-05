@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -18,7 +19,7 @@ class SWy : AppCompatActivity() {
         setContentView(R.layout.activity_swy)
 
 
-        textView.setText("Ciągły, dźwięczny, wydechowy szmer oddechowy o wysokiej częstotliwości, może przypominać skrzypienie. Dźwięk powstaje wskutek turbulentnego przepływu powietrza przez skurczone, leżące wewnątrz klatki piersiowej drogi oddechowe. Przyczyną może być astma, przewlekłe zapalenie oskrzeli, POChP, zachłyśnięcie treścią pokarmową, rzadziej zatorowość płucna, niewydolność serca.")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer powstający wskutek turbulentnego przepływu powietrza przez skurczone, leżące wewnątrz klatki piersiowej drogi oddechowe. Przyczyną może być astma, przewlekłe zapalenie oskrzeli, POChP, zachłyśnięcie treścią pokarmową, rzadziej zatorowość płucna, niewydolność serca.<br> <b>  Charakterystyka  </b> <br> Ciągły, dźwięczny, wydechowy szmer oddechowy o wysokiej częstotliwości, może przypominać skrzypienie."))
 
 
     }

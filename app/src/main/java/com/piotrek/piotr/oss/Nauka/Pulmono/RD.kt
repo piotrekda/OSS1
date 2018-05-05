@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
@@ -16,7 +17,7 @@ class RD : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rd)
-        textView.setText("Przerywany, krótki szmer oddechowy (przypomina dźwięk drewna palonego w kominku). Dźwięk wynika z owierających się wcześniej zamkniętych małych dróg oddechowych (związane z zalegającą wydzieliną, badź niedostatecznym upowietrzeniem – niedodma). Słyszalne w zarówno w fazie wdechowej i wydechowej. Wczesne wdechowe i wydechowe trzeszczenia są oznaką chronicznego zapalenia oskrzeli. Późne wdechowe trzeszczenia mogą oznaczać zapalenie płuc, zastoinowe niewydoloność serca bądź niedodmę.")
+        textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Dźwięk wynika z owierających się wcześniej zamkniętych małych dróg oddechowych (związane z zalegającą wydzieliną, badź niedostatecznym upowietrzeniem – niedodma). Wczesne wdechowe i wydechowe trzeszczenia są oznaką chronicznego zapalenia oskrzeli. Późne wdechowe trzeszczenia mogą oznaczać zapalenie płuc, zastoinową niewydoloność serca, bądź niedodmę. <br> <b>  Charakterystyka  </b> <br> Przerywany, krótki szmer oddechowy (przypomina dźwięk drewna palonego w kominku). Słyszalne w zarówno w fazie wdechowej i wydechowej."))
 
 
     }
