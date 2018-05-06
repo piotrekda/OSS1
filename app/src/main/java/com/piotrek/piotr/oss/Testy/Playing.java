@@ -54,7 +54,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         initViews();
         setUpButtons();
 
-        mCountDown = new CountDownTimer(30000, 1000) {
+        mCountDown = new CountDownTimer(40000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 progressBar.setProgress(progressValue);
