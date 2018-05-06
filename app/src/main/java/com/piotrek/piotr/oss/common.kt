@@ -1,4 +1,4 @@
-package com.example.piotr.oss
+package com.piotrek.piotr.oss
 
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.toolbar.*
