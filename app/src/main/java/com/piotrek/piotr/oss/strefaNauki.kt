@@ -12,11 +12,9 @@ class strefaNauki : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_strefa_nauki)
+        setUpActionBar()
     }
-    fun toMainActivity (view: View) {
-        val intent = Intent(applicationContext, MainActivity::class.java)
-        startActivity(intent)
-    }
+
     fun toKardio (view: View) {
         val intent = Intent(applicationContext, Kardio::class.java)
         startActivity(intent)
