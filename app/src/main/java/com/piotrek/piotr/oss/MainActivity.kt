@@ -1,10 +1,15 @@
 package com.piotrek.piotr.oss
 
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
+import android.support.v4.content.ContextCompat
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -70,13 +75,27 @@ class MainActivity : AppCompatActivity() {
         })
 
         fab_sub1.setOnClickListener({
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/OsluchajSieSam"))
-            startActivity(i)
+
+            try
+            {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/868199456719651")))
+            }
+            catch (anfe:android.content.ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/OsluchajSieSam")))
+            }
+
+
         })
 
         fab_sub2.setOnClickListener({
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/apps/com.piotrek.piotr.oss"))
-            startActivity(i)
+            val appPackageName = getPackageName() // getPackageName() from Context or Activity object
+            try
+            {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)))
+            }
+            catch (anfe:android.content.ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)))
+            }
         })
 
         fab_sub3.setOnClickListener({
@@ -97,3 +116,4 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 }
+

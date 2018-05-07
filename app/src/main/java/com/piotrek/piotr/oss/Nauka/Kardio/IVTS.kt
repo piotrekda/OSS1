@@ -46,6 +46,10 @@ class IVTS : AppCompatActivity() {
             Toast.makeText(this@IVTS, "Załóż słuchawki", Toast.LENGTH_SHORT).show()
             playsound.setImageResource(R.drawable.e111)
         }
+        mediaPlayer.setOnCompletionListener {
+            playsound.setImageResource(R.drawable.e11)
+        }
+
     }
 
     override fun onStop() {
