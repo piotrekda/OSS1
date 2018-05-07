@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
 import com.piotrek.piotr.oss.setUpActionBar
@@ -14,11 +15,13 @@ import kotlinx.android.synthetic.main.activity_jo.*
 class SWd : AppCompatActivity() {
 
     private lateinit var mediaPlayer : MediaPlayer
+    lateinit var playsound : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swd)
         setUpActionBar()
+        playsound = findViewById(R.id.playsound) as ImageView
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer oddechowy wskazujący na przycznę znajdującą się w krtni lub tchawicy. Może być wywołany przez porażenie strun głosowych, zmiany zapalne krtani i tchawicy, ucisk na tchawicę z zewnątrz, ciało obce. <br> <b>  Charakterystyka  </b> <br>Ciągły, głośny, wdechowy, szmer oddechowy o stałej częstoliwości."))
 
 
@@ -36,9 +39,11 @@ class SWd : AppCompatActivity() {
 
         if (mediaPlayer!!.isPlaying) {
             mediaPlayer!!.pause()
+            playsound.setImageResource(R.drawable.e11)
         } else {
             mediaPlayer!!.start()
             Toast.makeText(this@SWd, "Załóż słuchawki", Toast.LENGTH_SHORT).show()
+            playsound.setImageResource(R.drawable.e111)
         }
     }
 

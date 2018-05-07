@@ -167,14 +167,15 @@
 
     <TextView
         android:id="@+id/question"
-        android:layout_below="@+id/customtoolbar"
-        android:layout_width="345dp"
+        android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_above="@+id/button_play"
+        android:layout_below="@+id/customtoolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-124dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:paddingHorizontal="10dp"/>
 </RelativeLayout>

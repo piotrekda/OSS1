@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
 import com.piotrek.piotr.oss.setUpActionBar
@@ -13,12 +14,13 @@ import kotlinx.android.synthetic.main.activity_jo.*
 
 class SZM : AppCompatActivity() {
     private lateinit var mediaPlayer : MediaPlayer
+    lateinit var playsound : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_szm)
         setUpActionBar()
-
+        playsound = findViewById(R.id.playsound) as ImageView
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologiczne zmniejszenie się pola powierzchni ujścia zastawki mitralnej, utrudniające napływ krwi do lewej komory. Zwężenie ze względu na etiologię dzielimy na strukturalne (ograniczenie ruchomości płatków spowodowane przez zmiany organiczne w ich obrębie), czynnościowe (nieprawidłowe otwieranie płatów o prawidłowej strukturze) i względne (stany chorobowe przebiegające ze zwiększonym przepływem przez zastawkę mitralną)" +
                 "<br> <b>  Charakterystyka  </b> <br>Szmer śródrozkurczowy (mezodiastoliczny) typu decrescendo, przechodzący w narastający (crescendo) szmer przedskurczowy, najgłośniejszy nad koniuszkiem serca. Nie promieniujący, głośny, „kłapiący” I ton serca s1. Ton (trzask) otwarcia zastawki mitralnej."))
@@ -38,9 +40,11 @@ class SZM : AppCompatActivity() {
 
         if (mediaPlayer!!.isPlaying) {
             mediaPlayer!!.pause()
+            playsound.setImageResource(R.drawable.e11)
         } else {
             mediaPlayer!!.start()
             Toast.makeText(this@SZM, "Załóż słuchawki", Toast.LENGTH_SHORT).show()
+            playsound.setImageResource(R.drawable.e111)
         }
     }
 

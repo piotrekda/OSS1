@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
 import com.piotrek.piotr.oss.setUpActionBar
@@ -15,12 +16,13 @@ class PTS : AppCompatActivity() {
 
 
     private lateinit var mediaPlayer : MediaPlayer
+    lateinit var playsound : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pts)
         setUpActionBar()
-
+        playsound = findViewById(R.id.playsound) as ImageView
 
         textView.setText("W prawidłowej pracy serca możemy wyróżnić dwa fizjologiczne tony, występujące u wszystkich ludzi:\n" +
                 "– I ton – przypada na początkowy okres skurczu komór, trwa około 140 ms. Widmo akustyczne tworzone jest poprzez zamykające się zastawki mitralną i trójdzielną. Najgłośniej słyszalny jest na koniuszku serca.\n" +
@@ -41,9 +43,11 @@ class PTS : AppCompatActivity() {
 
         if (mediaPlayer!!.isPlaying) {
             mediaPlayer!!.pause()
+            playsound.setImageResource(R.drawable.e11)
         } else {
             mediaPlayer!!.start()
             Toast.makeText(this@PTS, "Załóż słuchawki", Toast.LENGTH_SHORT).show()
+            playsound.setImageResource(R.drawable.e111)
         }
     }
 
