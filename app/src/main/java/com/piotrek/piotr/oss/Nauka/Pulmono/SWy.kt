@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class SWy : AppCompatActivity() {
@@ -17,6 +18,7 @@ class SWy : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swy)
+        setUpActionBar()
 
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer powstający wskutek turbulentnego przepływu powietrza przez skurczone, leżące wewnątrz klatki piersiowej drogi oddechowe. Przyczyną może być astma, przewlekłe zapalenie oskrzeli, POChP, zachłyśnięcie treścią pokarmową, rzadziej zatorowość płucna, niewydolność serca.<br> <b>  Charakterystyka  </b> <br> Ciągły, dźwięczny, wydechowy szmer oddechowy o wysokiej częstotliwości, może przypominać skrzypienie."))

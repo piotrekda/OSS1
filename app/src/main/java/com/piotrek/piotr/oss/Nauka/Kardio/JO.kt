@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class JO : AppCompatActivity() {
@@ -14,6 +15,7 @@ class JO : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jo)
+        setUpActionBar()
 
         textView.setText("Osłuchuj serce u spokojnie oddychającego pacjenta leżącego na plecach, w razie potrzeby polecając mu zatrzymanie oddechu w fazie wdechu lub wydechu. Szmery z prawego serca z reguły są głośniejsze w fazie wdechu.\n" +
                 "Na poniższej rycinie znajdują się 4 główne pola osłuchiwania serca wraz z ich centralnymi punktami:\n" +

@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class SO : AppCompatActivity() {
@@ -16,6 +17,7 @@ class SO : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_so)
+        setUpActionBar()
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer prawidłowo słyszalny nad tchawicą i dużymi oskrzelami, patologicznie nad obwodowymi częściami płuc (może wywołany być przez naciek zapalny lub krwotok). <br> <b>  Charakterystyka  </b> <br>Faza wydechowa wyraźniej zaznaczona od wdechowej."))
 
 

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class PTS : AppCompatActivity() {
@@ -18,6 +19,7 @@ class PTS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pts)
+        setUpActionBar()
 
 
         textView.setText("W prawidłowej pracy serca możemy wyróżnić dwa fizjologiczne tony, występujące u wszystkich ludzi:\n" +

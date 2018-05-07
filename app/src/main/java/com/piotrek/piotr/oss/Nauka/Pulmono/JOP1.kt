@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.piotrek.piotr.oss.R
 import com.github.chrisbanes.photoview.PhotoView
+import com.piotrek.piotr.oss.setUpActionBar
 
 class JOP1 : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class JOP1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jop1)
+        setUpActionBar()
 
         photoView = findViewById<PhotoView>(R.id.photo)
         photoView.setImageResource(R.drawable.e9)

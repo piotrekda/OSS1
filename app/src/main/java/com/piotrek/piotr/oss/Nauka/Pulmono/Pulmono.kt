@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import com.piotrek.piotr.oss.strefaNauki
 
 class Pulmono : AppCompatActivity() {
@@ -12,6 +13,7 @@ class Pulmono : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pulmono)
+        setUpActionBar()
     }
     fun tostrefaNauki (view: View) {
         val intent = Intent(applicationContext, strefaNauki::class.java)

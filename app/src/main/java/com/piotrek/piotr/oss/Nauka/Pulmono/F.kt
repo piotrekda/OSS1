@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class F : AppCompatActivity() {
@@ -17,6 +18,7 @@ class F : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_f)
+        setUpActionBar()
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Dźwięk wynika z obecności wydzieliny w drogach oddechowych, występuje w klatce piersiowej nad oskrzelami (nie nad pęcherzykami). <br> <b>  Charakterystyka  </b> <br>Ciągły, zarówno wdechowy i wydechowy szmer oddechowy o niskiej częstotliwości. Furczenia zazwyczaj ustępują po odkaszlnięciu."))
 

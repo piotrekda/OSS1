@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class IVTS : AppCompatActivity() {
@@ -17,6 +18,7 @@ class IVTS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ivts)
+        setUpActionBar()
 
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologiczny ton późnorozkurczowy. Powstaje w późnej fazie rozkurczu w czasie skurczu przedsionków, na skutek upośledzonej podatności komory. Składowa cwału przedskurczowego (cwału przedsionkowego)."))

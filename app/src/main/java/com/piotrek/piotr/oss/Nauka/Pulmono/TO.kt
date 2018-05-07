@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class TO : AppCompatActivity() {
@@ -17,6 +18,7 @@ class TO : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_to)
+        setUpActionBar()
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br> Szmer powstający na skutek przesuwania się po sobie dwóch blaszek opłucnej, zmienionych w wyniku odkładania się włóknika w przebiegu stanu zapalnego lub procesu nowotworowego. <br> <b>  Charakterystyka  </b> <br>Ciągły i przerywany chroboczący szmer oddechowy. Dźwięk przypomina odgłos stąpania po świeżym śniegu. Kaszel nie wpływa na zmianę dźwięku."))
 

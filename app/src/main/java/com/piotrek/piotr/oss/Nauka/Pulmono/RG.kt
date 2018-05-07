@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class RG : AppCompatActivity() {
@@ -17,6 +18,7 @@ class RG : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rg)
+        setUpActionBar()
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Szmer oddechowy związany z dużą ilością płynu w płucach. <br> <b>  Charakterystyka  </b> <br>Typowo wdechowy, przerywany, krótki szmer oddechowy. W porównaniu z trzeszczeniami jest głośniejszy, trwa dłużej i ma niższą częstotliwość. Określa się go także jako dźwięk bulgoczący."))
 

@@ -12,40 +12,7 @@
     tools:context=".Nauka.Pulmono.RD">
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/customtoolbar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_marginEnd="0dp"
-        android:background="?attr/colorPrimary"
-        tools:ignore="MissingConstraints">
-
-
-    </android.support.v7.widget.Toolbar>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/e5"
-        android:contentDescription="TODO" />
-
-    <ImageView
-        android:id="@+id/Back"
-        android:layout_width="48dp"
-        android:layout_height="29dp"
-        android:layout_alignBottom="@+id/customtoolbar"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="13dp"
-        android:contentDescription="TODO"
-        android:onClick="toPulmono"
-        android:src="@drawable/back1" />
+    <include layout="@layout/toolbar" />
 
     <TextView
         android:id="@+id/textView"

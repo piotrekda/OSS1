@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import com.piotrek.piotr.oss.MainActivity
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import com.piotrek.piotr.oss.strefaNauki
 
 class Kardio : AppCompatActivity() {
@@ -15,6 +16,7 @@ class Kardio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kardio)
+        setUpActionBar()
 
 
 

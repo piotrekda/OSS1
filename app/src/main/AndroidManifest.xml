@@ -41,86 +41,117 @@
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Nauka.Kardio.Kardio"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".strefaNauki"/>
         <activity
             android:name=".Nauka.Kardio.JO"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.JO1"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.JO"/>
         <activity
             android:name=".Nauka.Kardio.PTS"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.PTS1"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.PTS"/>
         <activity
             android:name=".Nauka.Kardio.IIITS"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.IVTS"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.SZA"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.SZA1"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.SZA"/>
         <activity
             android:name=".Nauka.Kardio.NZA"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.SZM"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.SZM1"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.SZM"/>
         <activity
             android:name=".Nauka.Kardio.NZM"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.ASD"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Kardio.VSD"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Kardio.Kardio"/>
         <activity
             android:name=".Nauka.Pulmono.Pulmono"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".strefaNauki"/>
         <activity
             android:name=".Nauka.Pulmono.JOP"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.JOP1"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.JOP"/>
         <activity
             android:name=".Nauka.Pulmono.ST"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.SP"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.SO"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.RD"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.RG"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.SWy"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.SWd"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.F"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
         <activity
             android:name=".Nauka.Pulmono.TO"
-            android:screenOrientation="portrait" />
-        <activity android:name=".about"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Nauka.Pulmono.Pulmono"/>
+        <activity
+            android:name=".about"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"
+            ></activity>
     </application>
 
 </manifest>

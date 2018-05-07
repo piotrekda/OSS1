@@ -9,6 +9,7 @@ import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class NZA : AppCompatActivity() {
@@ -18,6 +19,7 @@ class NZA : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nz)
+        setUpActionBar()
 
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologia polegająca na cofaniu się krwi z aorty do lewej komory w wyniku nieprawidłowego zamykania się płatków zastawki aortalnej. Dzielimy ją na niedomykalność pierwotną (uszkodzenie lub wrodzona nieprawidłowość płatków i następnie poszerzenie drogi odpływu) i wtórną (poszerzenie drogi odpływu). Niedomykalność aortalna może być ostra (np. w rozwarstwieniu aorty, infekcyjnym zapaleniu wsierdzia) lub przewlekła (gorączka reumatyczna, miażdżyca, tętniak aorty wstępującej, choroby tkanki łącznej). " +

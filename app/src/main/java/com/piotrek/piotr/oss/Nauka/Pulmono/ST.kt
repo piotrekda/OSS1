@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class ST : AppCompatActivity() {
@@ -17,6 +18,7 @@ class ST : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_st)
+        setUpActionBar()
         textView.setText(Html.fromHtml("<br> <b>  Charakterystyka  </b> <br>Szmer głośny, słyszalny dokładnie nad tchawicą. Faza wdechowa równa się wydechowej."))
 
 

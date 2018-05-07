@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class SZM : AppCompatActivity() {
@@ -16,6 +17,7 @@ class SZM : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_szm)
+        setUpActionBar()
 
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br>Patologiczne zmniejszenie się pola powierzchni ujścia zastawki mitralnej, utrudniające napływ krwi do lewej komory. Zwężenie ze względu na etiologię dzielimy na strukturalne (ograniczenie ruchomości płatków spowodowane przez zmiany organiczne w ich obrębie), czynnościowe (nieprawidłowe otwieranie płatów o prawidłowej strukturze) i względne (stany chorobowe przebiegające ze zwiększonym przepływem przez zastawkę mitralną)" +

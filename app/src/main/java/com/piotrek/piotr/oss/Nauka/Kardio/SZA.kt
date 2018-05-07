@@ -8,6 +8,7 @@ import android.text.Html
 import android.view.View
 import android.widget.Toast
 import com.piotrek.piotr.oss.R
+import com.piotrek.piotr.oss.setUpActionBar
 import kotlinx.android.synthetic.main.activity_jo.*
 
 class SZA : AppCompatActivity() {
@@ -17,6 +18,7 @@ class SZA : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sz)
+        setUpActionBar()
 
 
         textView.setText(Html.fromHtml(" <b>  Etiologia  </b> <br> Patologiczne zmniejszenie się pola powierzchni ujścia aortalnego, wpływające na utrudnienie wypływu krwi z lewej komory. Najczęściej jest to wada nabyta, wywołana przez zwyrodnienie, rzadko przez chorobę reumatyczną serca. Może występować też jako wada wrodzona (najczęściej dwupłatkowa zastawka aorty)." +
