@@ -14,148 +14,156 @@
     <include layout="@layout/toolbar" />
 
 
-
     <Button
         android:id="@+id/button10"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
+        android:layout_marginTop="495dp"
         android:background="@drawable/rounded_button"
-        android:text="Tarcie opłucnowe"
         android:onClick="toTO"
+        android:text="Tarcie opłucnowe"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button09"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="79dp"
+        android:layout_marginTop="449dp"
         android:background="@drawable/rounded_button"
-        android:text="Furczenie"
         android:onClick="toF"
+        android:text="Furczenie"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button07"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="172dp"
+        android:layout_marginTop="357dp"
         android:background="@drawable/rounded_button1"
-        android:text="Świsty wydechowe"
         android:onClick="toSWy"
+        android:text="Świsty wydechowe"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button08"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="125dp"
+        android:layout_marginTop="403dp"
         android:background="@drawable/rounded_button"
-        android:text="Świsty wdechowe (stridor)"
         android:onClick="toSWd"
+        android:text="Świsty wdechowe (stridor)"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button06"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="218dp"
+        android:layout_marginTop="311dp"
         android:background="@drawable/rounded_button"
-        android:text="Rżężenie grubobańkowe"
         android:onClick="toRG"
+        android:text="Rżężenie grubobańkowe"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button04"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="219dp"
         android:background="@drawable/rounded_button"
-        android:text="Szmer oskrzelowy"
         android:onClick="toSO"
+        android:text="Szmer oskrzelowy"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button05"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="265dp"
         android:background="@drawable/rounded_button"
-        android:text="Rżężenie drobnobańkowe (trzeszczenia)"
         android:onClick="toRD"
+        android:text="Rżężenie drobnobańkowe (trzeszczenia)"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button03"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="173dp"
         android:background="@drawable/rounded_button1"
-        android:text="Szmer pęcherzykowy"
         android:onClick="toSP"
+        android:text="Szmer pęcherzykowy"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
     <Button
         android:id="@+id/button02"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="127dp"
         android:background="@drawable/rounded_button"
-        android:text="Szmer tchawiczy"
         android:onClick="toST"
+        android:text="Szmer tchawiczy"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
-
-
-
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
 
     <Button
         android:id="@+id/button01"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="81dp"
         android:background="@drawable/rounded_button"
-        android:text="Jak osłuchiwać"
         android:onClick="toJOP"
+        android:text="Jak osłuchiwać"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginHorizontal="10dp"/>
 
 
 

@@ -56,5 +56,8 @@ class IIITS : AppCompatActivity() {
         val intent = Intent(applicationContext, Kardio::class.java)
         startActivity(intent)
     }
-
+    fun toIIITS1 (view: View) {
+        val intent = Intent(applicationContext, IIITS1::class.java)
+        startActivity(intent)
+    }
 }

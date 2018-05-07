@@ -13,23 +13,24 @@
 
 
     <include layout="@layout/toolbar" />
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="337dp"
-        android:layout_height="239dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="74dp"
         android:text="TextView"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:paddingHorizontal="20dp"/>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="352dp"
-        android:layout_height="wrap_content"
+        android:layout_height="204dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="19dp"
+        android:layout_centerHorizontal="true"
         android:onClick="toJOP1"
         app:srcCompat="@drawable/e9" />
 
@@ -37,8 +38,8 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView"
+        android:layout_alignEnd="@+id/imageView2"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="30dp"
         app:srcCompat="@android:drawable/ic_menu_zoom" />
 </RelativeLayout>

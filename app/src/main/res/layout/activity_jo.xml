@@ -16,16 +16,18 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="337dp"
-        android:layout_height="339dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp">
+        android:layout_marginTop="91dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="150dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="339dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:text="TextView"
@@ -38,8 +40,8 @@
         android:layout_width="126dp"
         android:layout_height="122dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/scroll"
-        android:layout_marginBottom="19dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
         android:onClick="toJO1"
         app:srcCompat="@drawable/e7" />
 

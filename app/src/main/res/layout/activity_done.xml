@@ -81,7 +81,7 @@
                 android:layout_margin="8dp"
                 android:background="#262261"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:text="Spróbuj ponownie"
+                android:text="Powrót"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:theme="@style/MyButton" />

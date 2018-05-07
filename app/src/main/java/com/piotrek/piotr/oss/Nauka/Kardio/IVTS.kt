@@ -56,5 +56,9 @@ class IVTS : AppCompatActivity() {
         val intent = Intent(applicationContext, Kardio::class.java)
         startActivity(intent)
     }
+    fun toIVTS1 (view: View) {
+        val intent = Intent(applicationContext, IVTS1::class.java)
+        startActivity(intent)
+    }
 
 }

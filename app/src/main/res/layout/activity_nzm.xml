@@ -16,16 +16,18 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="337dp"
-        android:layout_height="339dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="91dp">
+        android:layout_marginTop="91dp"
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="150dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="339dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:text="TextView"
@@ -37,9 +39,10 @@
         android:id="@+id/imageView2"
         android:layout_width="114dp"
         android:layout_height="92dp"
-        android:layout_alignBottom="@+id/playsound"
-
-        android:layout_alignStart="@+id/scroll"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
         app:srcCompat="@drawable/nzm" />
 
 
@@ -47,9 +50,10 @@
         android:id="@+id/playsound"
         android:layout_width="134dp"
         android:layout_height="118dp"
-
-        android:layout_alignEnd="@+id/scroll"
-        android:layout_below="@+id/scroll"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
         android:onClick="playMusic"
         app:srcCompat="@drawable/e11" />
 </RelativeLayout>

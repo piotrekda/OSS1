@@ -59,6 +59,9 @@ class NZA : AppCompatActivity() {
         startActivity(intent)
     }
 
-
+    fun toNZA1 (view: View) {
+        val intent = Intent(applicationContext, NZA1::class.java)
+        startActivity(intent)
+    }
 
 }
