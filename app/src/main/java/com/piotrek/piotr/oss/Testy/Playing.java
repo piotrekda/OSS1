@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.piotrek.piotr.oss.Testy.DbHelper.DbHelper;
 import com.piotrek.piotr.oss.Testy.Model.Question;
@@ -18,6 +19,8 @@ import com.piotrek.piotr.oss.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.app.ProgressDialog.show;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,6 +43,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     TextView questiona;
     MediaPlayer mySound;
     String field;
+    ImageView button_play;
 
 
     @Override
@@ -47,6 +51,10 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing);
         makeInitialization();
+
+
+
+
     }
 
     private void makeInitialization() {
@@ -88,6 +96,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         btnB = findViewById(R.id.btnAnswerB);
         btnC = findViewById(R.id.btnAnswerC);
         btnD = findViewById(R.id.btnAnswerD);
+        button_play = findViewById(R.id.button_play);
     }
 
     private void setUpButtons() {
@@ -101,12 +110,14 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     protected void onResume() {
         super.onResume();
         tryToSetUpAudio(index);
+        button_play.setImageResource(R.drawable.e10);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         tryToReleaseAudio();
+        button_play.setImageResource(R.drawable.e10);
     }
 
     private void showQuestion(int index) {
@@ -144,7 +155,10 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         if (soundId != 0) {
             mySound = MediaPlayer.create(this, soundId);
         }
+
     }
+
+
 
     public int getResourceId(String pVariableName, String pResourcename, String pPackageName) {
         try {
@@ -158,16 +172,24 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     public void playMusic(View view) {
         if (mySound.isPlaying()) {
             mySound.pause();
+            button_play.setImageResource(R.drawable.e10);
         } else {
             mySound.start();
+            button_play.setImageResource(R.drawable.e101);
         }
 
-    }
+
+
+        }
+
+
+
 
     @Override
     public void onClick(View v) {
         tryToReleaseAudio();
         mCountDown.cancel();
+        button_play.setImageResource(R.drawable.e10);
         if (index < totalQuestion) {
             Button clickedButton = (Button) v;
             if (clickedButton.getText().equals(questionPlay.get(index).getCorrectAnswer())) {
@@ -185,6 +207,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     private void tryToReleaseAudio() {
         if (mySound != null) {
             mySound.release();
+            button_play.setImageResource(R.drawable.e10);
         }
     }
 
@@ -194,5 +217,8 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         intent.putExtra(EXTRA_FIELD, field);
         context.startActivity(intent);
     }
+
+
+
 }
 

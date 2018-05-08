@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.piotrek.piotr.oss.CommonKt;
 import com.piotrek.piotr.oss.R;
 import com.piotrek.piotr.oss.Testy.Common.CustomAdapter;
 import com.piotrek.piotr.oss.Testy.DbHelper.DbHelper;
@@ -20,16 +21,17 @@ public class Score extends AppCompatActivity {
     private static final String EXTRA_FIELD = "FIELD";
 
     ListView lstView;
-    ImageView Back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+        CommonKt.setUpActionBar(this);
 
         final String field = getIntent().getStringExtra(EXTRA_FIELD);
 
-        Back = (ImageView) findViewById(R.id.Back);
+
 
         lstView = (ListView) findViewById(R.id.lstRanking);
         DbHelper db = new DbHelper(this, field);
@@ -40,12 +42,7 @@ public class Score extends AppCompatActivity {
         }
 
         final Context context = this;
-        Back.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Test.start(context, field);
-            }
-        });
+
     }
 
     static void start(Context context, String field) {

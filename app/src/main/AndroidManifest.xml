@@ -30,7 +30,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Testy.Score"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Testy.Test"/>
         <activity
             android:name=".Testy.StrefaTestu"
             android:parentActivityName=".MainActivity"
